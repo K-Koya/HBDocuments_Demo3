@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JunichiEyeblowNatural
+  m_Name: EmiriEyesNaturalRight
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -42,7 +42,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAnger
+    attribute: blendShape.EyeCloseSleep
     path: 
     classID: 137
     script: {fileID: 0}
@@ -72,7 +72,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSad
+    attribute: blendShape.EyeCloseSmile
     path: 
     classID: 137
     script: {fileID: 0}
@@ -102,7 +102,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubled
+    attribute: blendShape.EyeShapeDoubt
     path: 
     classID: 137
     script: {fileID: 0}
@@ -132,7 +132,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAngerL
+    attribute: blendShape.EyeOpenSurprised
     path: 
     classID: 137
     script: {fileID: 0}
@@ -162,7 +162,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAngerR
+    attribute: blendShape.EyeCloseSleepR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -192,7 +192,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSadL
+    attribute: blendShape.EyeCloseSmileR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -222,7 +222,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSadR
+    attribute: blendShape.EyeShapeDoubtR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -252,37 +252,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubledL
-    path: 
-    classID: 137
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubledR
+    attribute: blendShape.EyeOpenSurprisedR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -297,7 +267,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 3288217833
+      attribute: 2093930443
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -306,7 +276,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 2962790706
+      attribute: 1903629928
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -315,7 +285,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1342165628
+      attribute: 3062962770
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -324,7 +294,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1954367186
+      attribute: 2394050277
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -333,7 +303,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 2389867441
+      attribute: 1538067130
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -342,7 +312,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1695492911
+      attribute: 343884073
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -351,7 +321,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 2667583052
+      attribute: 3535044247
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -360,16 +330,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 4103348467
-      script: {fileID: 0}
-      typeID: 137
-      customType: 20
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
-      path: 0
-      attribute: 245046672
+      attribute: 2273934316
       script: {fileID: 0}
       typeID: 137
       customType: 20
@@ -423,7 +384,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAnger
+    attribute: blendShape.EyeCloseSleep
     path: 
     classID: 137
     script: {fileID: 0}
@@ -453,7 +414,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSad
+    attribute: blendShape.EyeCloseSmile
     path: 
     classID: 137
     script: {fileID: 0}
@@ -483,7 +444,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubled
+    attribute: blendShape.EyeShapeDoubt
     path: 
     classID: 137
     script: {fileID: 0}
@@ -513,7 +474,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAngerL
+    attribute: blendShape.EyeOpenSurprised
     path: 
     classID: 137
     script: {fileID: 0}
@@ -543,7 +504,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowAngerR
+    attribute: blendShape.EyeCloseSleepR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -573,7 +534,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSadL
+    attribute: blendShape.EyeCloseSmileR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -603,7 +564,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowSadR
+    attribute: blendShape.EyeShapeDoubtR
     path: 
     classID: 137
     script: {fileID: 0}
@@ -633,37 +594,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubledL
-    path: 
-    classID: 137
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.016666668
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: blendShape.EyebrowTroubledR
+    attribute: blendShape.EyeOpenSurprisedR
     path: 
     classID: 137
     script: {fileID: 0}

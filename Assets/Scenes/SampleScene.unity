@@ -439,7 +439,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158869999}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 095a79f7c84e2a94fac0d1d2d71e8c12, type: 3}
   m_Controller: {fileID: 9100000, guid: 62895f1e3ddda4947b334ca1e816785c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -2602,6 +2602,101 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[2]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[3]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[4]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[5]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[6]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[14]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[15]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[16]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[17]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[18]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[19]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[21]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[22]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[24]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[25]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[26]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289648526869838784, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[27]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7723398757181817907, guid: d3933a4ffb80fe54b8603b7686e2440c,
         type: 3}
       propertyPath: m_Name
@@ -2610,8 +2705,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2073981303848716817, guid: d3933a4ffb80fe54b8603b7686e2440c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5844151895972140660}
   m_SourcePrefab: {fileID: 100100000, guid: d3933a4ffb80fe54b8603b7686e2440c, type: 3}
+--- !u!1 &5844151895972140659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2073981303848716817, guid: d3933a4ffb80fe54b8603b7686e2440c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5844151895972140658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5844151895972140660
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844151895972140659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 58943260a8f1fdb49b6895f0b992b9b9, type: 3}
+  m_Controller: {fileID: 9100000, guid: c6a8e54123183674a86cbb3b85fe9093, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
