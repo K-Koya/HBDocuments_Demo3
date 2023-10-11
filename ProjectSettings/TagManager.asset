@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LampLens
+  - StreetLamp
+  - HouseWindow
+  - Allies
+  - Enemy
+  - EyePoint
   layers:
   - Default
   - TransparentFX
@@ -11,11 +17,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - CameraTroughGround
+  - Player
+  - Allies
+  - Enemy
   - 
   - 
   - 
