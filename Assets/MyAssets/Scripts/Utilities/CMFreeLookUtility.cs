@@ -5,10 +5,11 @@ using Cinemachine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CinemachineFreeLook))]
+[DefaultExecutionOrder(100)]
 public class CMFreeLookUtility : MonoBehaviour
 {
     /// <summary>カメラズーム時のFOV最大値</summary>
-    const byte _ZOOM_FOV_MAX = 100;
+    const byte _ZOOM_FOV_MAX = 120;
 
     /// <summary>カメラズーム時のFOV最小値</summary>
     const byte _ZOOM_FOV_MIN = 20;
@@ -23,12 +24,6 @@ public class CMFreeLookUtility : MonoBehaviour
 
     /// <summary>true : カメラのスティック操作をズーム操作に変換する</summary>
     bool _zoomFlag = false;
-
-    /// <summary>カメラ操作をズーム操作に変換する際の入力値</summary>
-    float _zoomValue = 0f;
-
-    /// <summary>カメラ操作をズーム操作に変換する際にカメラスピードを0にするため、0から復帰するためのキャッシュ:X軸</summary>
-    float _axisSpeedCacheX = 0f;
 
     /// <summary>カメラ操作をズーム操作に変換する際にカメラスピードを0にするため、0から復帰するためのキャッシュ:Y軸</summary>
     float _axisSpeedCacheY = 0f;
@@ -61,10 +56,32 @@ public class CMFreeLookUtility : MonoBehaviour
             SeekPlayer();
         }
 
-        //ズーム入力
-        if (_zoomFlag)
+        //ズーム入力切り替え
+        if (InputUtility.GetCameraZoomFlagDown)
         {
-            _cm.m_Lens.FieldOfView = Mathf.Clamp(_cm.m_Lens.FieldOfView - _deltaZoomFOV * _zoomValue * 0.2f, _ZOOM_FOV_MIN, _ZOOM_FOV_MAX);
+            Debug.Log(_zoomFlag);
+
+            if (_zoomFlag)
+            {
+                _zoomFlag = false;
+                _cm.m_YAxis.m_MaxSpeed = _axisSpeedCacheY;
+            }
+            else
+            {
+                _zoomFlag = true;
+                _axisSpeedCacheY = _cm.m_YAxis.m_MaxSpeed;
+                _cm.m_YAxis.m_MaxSpeed = 0f;
+            }
+        }
+
+        //ズーム実施
+        if (_zoomFlag && InputUtility.GetCameraMoving)
+        {
+            CameraZoom(InputUtility.GetCameraMoveDirection.y * 0.2f);
+        }
+        else if(Mathf.Abs(InputUtility.GetCameraZoomValue) > 0f)
+        {
+            CameraZoom(InputUtility.GetCameraZoomValue);
         }
     }
 
@@ -82,71 +99,10 @@ public class CMFreeLookUtility : MonoBehaviour
         }
     }
 
-    /// <summary>InputSystemのカメラズーム操作のコールバック</summary>
-    /// <param name="context">入力値情報</param>
-    public void OnCameraZoomCall(InputAction.CallbackContext context)
+    /// <summary>カメラズーム操作</summary>
+    /// <param name="value">入力量</param>
+    void CameraZoom(float value)
     {
-        //ポーズ時は止める
-        if (PauseManager.Instance.IsPause) return;
-
-        //カメラズーム操作可否
-        if (!_isAbleToZoom) return;
-
-        //入力値が加わった時だけ操作
-        if (context.started)
-        {
-            float delta = context.ReadValue<Vector2>().y;
-            _cm.m_Lens.FieldOfView = Mathf.Clamp(_cm.m_Lens.FieldOfView - _deltaZoomFOV * delta, _ZOOM_FOV_MIN, _ZOOM_FOV_MAX);
-        }
-    }
-
-    /// <summary>InputSystemのスティック操作をカメラズーム操作に切り替えるボタンのコールバック</summary>
-    /// <param name="context">入力値情報</param>
-    public void OnCameraZoomFlagCall(InputAction.CallbackContext context)
-    {
-        //ポーズ時は止める
-        if (PauseManager.Instance.IsPause) return;
-
-        //カメラズーム操作可否
-        if (!_isAbleToZoom) return;
-
-        //入力値が加わった時だけ操作
-        if (context.started)
-        {
-            _zoomFlag = true;
-            _axisSpeedCacheX = _cm.m_XAxis.m_MaxSpeed;
-            _cm.m_XAxis.m_MaxSpeed = 0f;
-            _axisSpeedCacheY = _cm.m_YAxis.m_MaxSpeed;
-            _cm.m_YAxis.m_MaxSpeed = 0f;
-        }
-    }
-
-    /// <summary>InputSystemのカメラ移動操作のコールバック</summary>
-    /// <param name="context">入力値情報</param>
-    public void OnCameraMoveCall(InputAction.CallbackContext context)
-    {
-        //ポーズ時は止める
-        if (PauseManager.Instance.IsPause) return;
-
-        //カメラズーム操作可否
-        if (!_isAbleToZoom) return;
-
-        //ズームフラグが入っている
-        if (_zoomFlag)
-        {
-            //入力値がなくなるとズーム終了
-            if (context.canceled)
-            {
-                _zoomFlag = false;
-                _zoomValue = 0f;
-                _cm.m_XAxis.m_MaxSpeed = _axisSpeedCacheX;
-                _cm.m_YAxis.m_MaxSpeed = _axisSpeedCacheY;
-            }
-            //入力値がある時だけ実施
-            else if(context.performed)
-            {
-                _zoomValue = context.ReadValue<Vector2>().y;                
-            }
-        }
+        _cm.m_Lens.FieldOfView = Mathf.Clamp(_cm.m_Lens.FieldOfView - _deltaZoomFOV * value, _ZOOM_FOV_MIN, _ZOOM_FOV_MAX);
     }
 }

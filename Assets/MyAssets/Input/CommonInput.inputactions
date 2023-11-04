@@ -305,7 +305,7 @@
                     "id": "41d503f7-2a0b-43a9-99b3-d9e66892da57",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.03,y=0.03)",
+                    "processors": "ScaleVector2(x=0.05,y=-0.05)",
                     "groups": "",
                     "action": "CameraMove",
                     "isComposite": false,
@@ -315,7 +315,7 @@
                     "name": "",
                     "id": "22c893f2-a5ce-4dd5-9bd8-4a0a158bf4a3",
                     "path": "<Gamepad>/rightStick",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "CameraMove",
@@ -521,70 +521,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "ForGamePad",
-                    "id": "286d25b3-d2e4-42b0-bdb1-7d1b6805e529",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraZoomFlag",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "6b9a1d22-d420-4ffa-a0da-48a5a4fff1f5",
+                    "name": "",
+                    "id": "c97deca6-fb30-4c14-9a49-3bfcc7e4ec1c",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "CameraZoomFlag",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "a5446e41-4267-41a1-9955-0a1f24b49a25",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraZoomFlag",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "ForXboxController",
-                    "id": "e081978e-c6cc-4ddd-8811-cd2c365dba34",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraZoomFlag",
-                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
-                    "id": "617af547-22cf-4233-9498-f622c9954410",
+                    "name": "",
+                    "id": "a8b26ca0-bafa-47c6-aff9-fcdc945f22e7",
                     "path": "<XInputController>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "CameraZoomFlag",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "43503e13-1c88-4c82-b89e-68b6259cfe0e",
-                    "path": "<XInputController>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraZoomFlag",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
