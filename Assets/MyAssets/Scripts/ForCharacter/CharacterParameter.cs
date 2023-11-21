@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DefaultExecutionOrder(-1)]
-public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator, ICharacterParameterForCamera
+public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator, ICharacterParameterForCamera, ICourseOutProcedurer, IStageGoalProcedurer
 {
     #region 定数
     /// <summary>接地判定をとるために使う球体の半径が、コライダーの半径の何倍かを示す数値</summary>
@@ -15,10 +15,10 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     #region キャッシュ
 
     [SerializeField, Tooltip("カメラ注視位置オブジェクト")]
-    protected Transform _cameraTarget = null;
+    Transform _cameraTarget = null;
 
     [SerializeField, Tooltip("視点位置オブジェクト")]
-    protected Transform _eyePoint = null;
+    Transform _eyePoint = null;
 
     /// <summary>当該オブジェクトのリジッドボディ</summary>
     Rigidbody _rb = null;
@@ -28,6 +28,7 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
 
     
     #endregion
+
 
     [Header("手動定義")]
     #region メンバー
@@ -43,10 +44,6 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     [SerializeField, Tooltip("地面と壁の境界角度")]
     float _slopeLimit = 45f;
 
-    /// <summary>True : 重力方向を変更</summary>
-    bool _doSwitchGravity = false;
-
-
     /// <summary>キャラクターの重力向き</summary>
     Vector3 _gravityDirection = Vector3.down;
 
@@ -61,6 +58,9 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
 
     /// <summary>客観速度</summary>
     float _resultSpeed = 0f;
+
+    /// <summary>True : 重力方向を変更</summary>
+    bool _doSwitchGravity = false;
 
 
 
@@ -96,7 +96,6 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     {
         /* 初期化処理 */
         transform.up = -_gravityDirection;
-
         _rb = GetComponent<Rigidbody>();
 
         /* 接地判定処理用 */
@@ -173,6 +172,49 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
         _doSwitchGravity = false;
         return result;
     }
+
+    /*
+    /// <summary>コースアウト処理</summary>
+    /// <returns>自動アニメーションをかけるインスタンス</returns>
+    public GameObject DoCourseOut()
+    {
+        
+
+        //コースアウトアニメーションを有効にする
+        _stageCourseOut.SetActive(true);
+
+        //速度と向きを維持
+        _stageCourseOut.transform.position = transform.position;
+        _stageCourseOut.transform.rotation = transform.rotation;
+        Rigidbody rb = _stageCourseOut.GetComponent<Rigidbody>();
+        rb.velocity = _rb.velocity;
+        rb.AddTorque(2f, 0f, 0f, ForceMode.VelocityChange);
+                
+        //自分を非アクティブにする
+        gameObject.SetActive(false);
+
+        return _stageCourseOut;
+    }
+    */
+
+    /*
+    /// <summary>ステージクリア処理</summary>
+    /// <returns>自動アニメーションをかけるインスタンス</returns>
+    public GameObject DoStageGoal()
+    {
+        //ステージクリアアニメーションを有効にする
+        _stageClear.SetActive(true);
+
+        //位置と向きを維持
+        _stageClear.transform.position = transform.position;
+        _stageClear.transform.rotation = transform.rotation;
+
+        //自分を非アクティブにする
+        gameObject.SetActive(false);
+
+        return _stageClear;
+    }
+    */
 }
 
 /// <summary>Animator参照用</summary>
@@ -207,6 +249,18 @@ public interface ICharacterParameterForCamera
 
 /// <summary>ステージギミックからの干渉用</summary>
 public interface IInteractGimmicks
+{
+
+}
+
+/// <summary>コースアウト判定を反映用</summary>
+public interface ICourseOutProcedurer
+{
+
+}
+
+/// <summary>ステージクリア判定を反映用</summary>
+public interface IStageGoalProcedurer
 {
 
 }

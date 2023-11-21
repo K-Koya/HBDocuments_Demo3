@@ -10,6 +10,7 @@ TagManager:
   - Allies
   - Enemy
   - EyePoint
+  - GoalDolly
   layers:
   - Default
   - TransparentFX
@@ -31,8 +32,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - FairZone
+  - EventZone
   - 
   - 
   - 

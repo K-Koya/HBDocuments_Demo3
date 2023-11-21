@@ -20,6 +20,8 @@ public class TagManager : Singleton<TagManager>
     string _spawner = "Spawner";
     [SerializeField, Tooltip("床タグ")]
     string _floor = "Floor";
+    [SerializeField, Tooltip("ゴール用のDollyCart")]
+    string _goalDolly = "GoalDolly";
     #endregion
 
     #region プロパティ
@@ -35,6 +37,8 @@ public class TagManager : Singleton<TagManager>
     public string Spawner { get => _spawner; }
     /// <summary>床となるコライダーのタグ</summary>
     public string Floor { get => _floor; }
+    /// <summary>ゴール用のDollyCart用タグ</summary>
+    public string GoalDolly { get => _goalDolly; }
     #endregion
 
 }

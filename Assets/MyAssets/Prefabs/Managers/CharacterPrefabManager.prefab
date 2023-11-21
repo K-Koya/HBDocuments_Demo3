@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3631575346477276137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7026458808468035289}
+  - component: {fileID: 7406876155559074557}
+  m_Layer: 0
+  m_Name: CharacterPrefabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7026458808468035289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631575346477276137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7406876155559074557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631575346477276137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42792f71c67e03c4ea6a3fab72c68631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDontDestroyOnLoad: 0
+  _prefabs:
+  - name: Junichi
+    forPlaying: {fileID: 0}
+    forUseRigidBody: {fileID: 0}
+    forNotUseRigidBody: {fileID: 0}
+  - name: Emiri
+    forPlaying: {fileID: 5445589718184833296, guid: 4b82d86b8f53bb342a9f7862282c436b,
+      type: 3}
+    forUseRigidBody: {fileID: 7445955628563458929, guid: b764b0fc3e22b294f82a1a5748888f93,
+      type: 3}
+    forNotUseRigidBody: {fileID: 7587464067408465415, guid: a7bf8046e8cde4c45b54021aa4345fdf,
+      type: 3}

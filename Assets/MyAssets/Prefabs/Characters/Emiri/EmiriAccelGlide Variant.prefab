@@ -1,0 +1,659 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6350956797569151875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 240405762905971910, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2930c93924e39dd4bb76f910396f2a23, type: 2}
+    - target: {fileID: 729059061938087227, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 961778769802397700, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 967736661503375462, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563686606209212776, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763310559964249039, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9801379
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763310559964249039, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13684873
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763310559964249039, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.011180987
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763310559964249039, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.14309849
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946554346714203391, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519143914459850389, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525069855277733554, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655068088000648875, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844238022140124773, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.10297526
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844238022140124773, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5390189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000488765105034844, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238514661976832865, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17153287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238514661976832865, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16669914
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562127198864948612, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Name
+      value: EmiriAccelGlide Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562127198864948612, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588102615267471628, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090553203681821850, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225738451386540575, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491809593571679328, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706984809306881048, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800348125451969660, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0062093535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4800348125451969660, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.21951099
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867278961315728615, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917951681287545434, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944175097717062661, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309133759733282515, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531464215035174973, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176188879000454844, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349371967749537592, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654910146224056075, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.016685873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654910146224056075, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.11046543
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706610435101746540, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.96957713
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706610435101746540, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.17153302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706610435101746540, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.052038457
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706610435101746540, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.16669932
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721885096707433583, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6768857546520959895, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537509297280618150, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969001044494355042, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217723436575630081, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640627732528828942, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_Inert
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136110595860819859, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6844886203980454918, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2366809149083473739}
+    - targetCorrespondingSourceObject: {fileID: 6844886203980454918, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3979451917488761513}
+  m_SourcePrefab: {fileID: 100100000, guid: b4ab21bc58017c64db005cca141ff6f1, type: 3}
+--- !u!1 &495055326812057477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844886203980454918, guid: b4ab21bc58017c64db005cca141ff6f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6350956797569151875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2366809149083473739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495055326812057477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d979273fdc03f08498f575e67572db5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateNameLandingBeforeGlide: LandingBeforeGlide
+  _stateNameJumpToGoalGate: JumpToGoalGate
+  _stateNameGlide: Glide
+--- !u!114 &3979451917488761513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495055326812057477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246455474a0d74a4291b3cedc896ebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonePaths:
+  - 
+  - Body
+  - DenimHotPants
+  - DenimJacketShirt
+  - Eyes
+  - Face
+  - Hair
+  - LongBoots
+  - skelton
+  - skelton/Root
+  - skelton/Root/Hip
+  - skelton/Root/Hip/Spine
+  - skelton/Root/Hip/Spine/Chest
+  - skelton/Root/Hip/Spine/Chest/UpperChest
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.L/Eye.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.R/Eye.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1/HairBack1.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1/HairBack1.001/HairBack1.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1/HairBack1.001/HairBack1.002/HairBack1.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1/HairBack1.001/HairBack1.002/HairBack1.003/HairBack1.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack2
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack2/HairBack2.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack2/HairBack2.001/HairBack2.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack2/HairBack2.001/HairBack2.002/HairBack2.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack2/HairBack2.001/HairBack2.002/HairBack2.003/HairBack2.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack3
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack3/HairBack3.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack3/HairBack3.001/HairBack3.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack3/HairBack3.001/HairBack3.002/HairBack3.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack3/HairBack3.001/HairBack3.002/HairBack3.003/HairBack3.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack4
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack4/HairBack4.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack4/HairBack4.001/HairBack4.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack4/HairBack4.001/HairBack4.002/HairBack4.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack4/HairBack4.001/HairBack4.002/HairBack4.003/HairBack4.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack5
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack5/HairBack5.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack5/HairBack5.001/HairBack5.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack5/HairBack5.001/HairBack5.002/HairBack5.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack5/HairBack5.001/HairBack5.002/HairBack5.003/HairBack5.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack6
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack6/HairBack6.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack6/HairBack6.001/HairBack6.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack6/HairBack6.001/HairBack6.002/HairBack6.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack6/HairBack6.001/HairBack6.002/HairBack6.003/HairBack6.003_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront1
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront1/HairFront1.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront1/HairFront1.001/HairFront1.001_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront2
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront2/HairFront2_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront3
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront3/HairFront3_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront4
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront4/HairFront4_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront5
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront5/HairFront5_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront6
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairFront6/HairFront6_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide1
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide1/HairSide1_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide2
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide2/HairSide2_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide3
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide3/HairSide3.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide3/HairSide3.001/HairSide3.001_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide4
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide4/HairSide4.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide4/HairSide4.001/HairSide4.001_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide5
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairSide5/HairSide5_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001/Head.002
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001/Head.002/Head.003
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001/Head.002/Head.003/Head.004
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001/Head.002/Head.003/Head.004/Head.004_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/DBoneCollider
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/EyePoint
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Neck/DBoneCollider
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal 
+    Thumb.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal 
+    Thumb.L/Intermediate Thumb.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal 
+    Thumb.L/Intermediate Thumb.L/Distal Thumb.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal 
+    Thumb.L/Intermediate Thumb.L/Distal Thumb.L/Distal Thumb.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Index.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Index.L/Intermediate Index.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Index.L/Intermediate Index.L/Distal Index.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Index.L/Intermediate Index.L/Distal Index.L/Distal Index.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Little.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Little.L/Intermediate Little.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Little.L/Intermediate Little.L/Distal Little.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Little.L/Intermediate Little.L/Distal Little.L/Distal Little.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Middle.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Middle.L/Intermediate Middle.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Middle.L/Intermediate Middle.L/Distal Middle.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Middle.L/Intermediate Middle.L/Distal Middle.L/Distal Middle.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Ring.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Ring.L/Intermediate Ring.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Ring.L/Intermediate Ring.L/Distal Ring.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower Arm.L/Hand.L/Proximal
+    Ring.L/Intermediate Ring.L/Distal Ring.L/Distal Ring.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal 
+    Thumb.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal 
+    Thumb.R/Intermediate Thumb.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal 
+    Thumb.R/Intermediate Thumb.R/Distal Thumb.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal 
+    Thumb.R/Intermediate Thumb.R/Distal Thumb.R/Distal Thumb.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Index.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Index.R/Intermediate Index.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Index.R/Intermediate Index.R/Distal Index.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Index.R/Intermediate Index.R/Distal Index.R/Distal Index.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Little.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Little.R/Intermediate Little.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Little.R/Intermediate Little.R/Distal Little.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Little.R/Intermediate Little.R/Distal Little.R/Distal Little.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Middle.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Middle.R/Intermediate Middle.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Middle.R/Intermediate Middle.R/Distal Middle.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Middle.R/Intermediate Middle.R/Distal Middle.R/Distal Middle.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Ring.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Ring.R/Intermediate Ring.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Ring.R/Intermediate Ring.R/Distal Ring.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower Arm.R/Hand.R/Proximal
+    Ring.R/Intermediate Ring.R/Distal Ring.R/Distal Ring.R_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.L/Bust Top.L
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.L/Bust Top.L/Bust Top.L_end
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.R/Bust Top.R
+  - skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.R/Bust Top.R/Bust Top.R_end
+  - skelton/Root/Hip/Spine/DBoneCollider
+  - skelton/Root/Hip/Upper Leg.L
+  - skelton/Root/Hip/Upper Leg.L/Lower Leg.L
+  - skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L
+  - skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L/Toes.L
+  - skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L/Toes.L/Toes.L_end
+  - skelton/Root/Hip/Upper Leg.R
+  - skelton/Root/Hip/Upper Leg.R/Lower Leg.R
+  - skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R
+  - skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R/Toes.R
+  - skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R/Toes.R/Toes.R_end
+  - DynamicBones
+  - DynamicBones/BustR
+  - DynamicBones/BustL
+  - DynamicBones/HairBack3
+  - DynamicBones/HairBack4
+  - DynamicBones/HairFront1
+  - DynamicBones/HairFront2
+  - DynamicBones/HairFront3
+  - DynamicBones/HairFront4
+  - DynamicBones/HairFront5
+  - DynamicBones/HairFront6
+  - DynamicBones/HairSide1
+  - DynamicBones/HairSide4
+  - DynamicBones/HairSide5
+  - DynamicBones/HairBack1
+  - DynamicBones/HairBack2
+  - DynamicBones/HairBack5
+  - DynamicBones/HairSide2
+  - DynamicBones/HairSide3
+  - DynamicBones/HairBack6
+  - DynamicBones/HairBack7
+  showBones: 000000000b0000000c0000000d0000000e0000000f000000530000005400000055000000560000006b0000006c0000006d0000006e0000008a0000008b0000008c0000008d0000008f000000900000009100000092000000
+  foldoutBones: 940000009200000091000000900000008f0000008d0000008c0000008b0000008a0000008700000086000000840000008300000081000000800000007f0000007d0000007c0000007b00000079000000780000007700000075000000740000007300000071000000700000006f0000006e0000006d0000006c0000006b00000069000000680000006700000065000000640000006300000061000000600000005f0000005d0000005c0000005b000000590000005800000057000000560000005500000054000000530000004e0000004d0000004c0000004b0000004900000047000000460000004400000043000000410000003f0000003d0000003b0000003900000037000000350000003300000032000000300000002f0000002e0000002d0000002b0000002a00000029000000280000002600000025000000240000002300000021000000200000001f0000001e0000001c0000001b0000001a000000190000001700000016000000150000001400000012000000100000000f0000000e0000000d0000000c0000000b0000000a000000090000000800000000000000
+  mirrorBones: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff12000000130000001000000011000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a000000860000008700000088000000830000008400000085000000ffffffff8f000000900000009100000092000000930000008a0000008b0000008c0000008d0000008e000000ffffffff9600000095000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  mirrorBlendShape:
+  - renderer: {fileID: 6146629347235187685}
+    names:
+    - EyebrowTroubledR
+    - EyebrowTroubledL
+    - EyebrowSadL
+    - EyebrowSadR
+    - EyebrowAngerL
+    - EyebrowAngerR
+    - EyeCloseSleepL
+    - EyeCloseSleepR
+    - EyeCloseSmileL
+    - EyeCloseSmileR
+    - EyeShapeDoubtL
+    - EyeShapeDoubtR
+    - EyeOpenSurprisedL
+    - EyeOpenSurprisedR
+    mirrorNames:
+    - EyebrowTroubledL
+    - EyebrowTroubledR
+    - EyebrowSadR
+    - EyebrowSadL
+    - EyebrowAngerR
+    - EyebrowAngerL
+    - EyeCloseSleepR
+    - EyeCloseSleepL
+    - EyeCloseSmileR
+    - EyeCloseSmileL
+    - EyeShapeDoubtR
+    - EyeShapeDoubtL
+    - EyeOpenSurprisedR
+    - EyeOpenSurprisedL
+  animatorIkData:
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -2.9955013, y: 1.3165234, z: 1.1101476}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 1.062851
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  - enable: 1
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -3.3690336, y: 1.2006955, z: 0.3961392}
+    rotation: {x: 0.5010186, y: -0.0058464156, z: -0.17230047, w: -0.84809124}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 99.26987
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 0
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 0
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 0
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  originalIkData: []
+  selectionData: []
+  lastSelectAnimationClip: {fileID: 7400000, guid: fd605b15a2bcddc4a920d81b8bf07a3f,
+    type: 2}
+  handPoseList: []
+  blendShapeList: []
+--- !u!137 &6146629347235187685 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 967736661503375462, guid: b4ab21bc58017c64db005cca141ff6f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6350956797569151875}
+  m_PrefabAsset: {fileID: 0}

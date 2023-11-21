@@ -21,7 +21,7 @@ public class LayerManager : Singleton<LayerManager>
 
     #region プロパティ
     /// <summary>地面レイヤ</summary>
-    public LayerMask Ground { get => _Ground | _SeeThroughGround; }
+    public LayerMask Ground { get => _Ground; }
     /// <summary>カメラがすり抜ける地面レイヤ</summary>
     public LayerMask SeeThroughGround { get => _SeeThroughGround; }
     /// <summary>敵レイヤ</summary>

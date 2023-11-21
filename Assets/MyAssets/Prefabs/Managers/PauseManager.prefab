@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c45afa9fdb77d4ea32c1dc5d824258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDontDestroyOnLoad: 1
+  _isDontDestroyOnLoad: 0
+  _onPause:
+    m_PersistentCalls:
+      m_Calls: []
+  _onResume:
+    m_PersistentCalls:
+      m_Calls: []

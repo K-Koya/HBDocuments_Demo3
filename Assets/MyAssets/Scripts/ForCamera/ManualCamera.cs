@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,7 +29,8 @@ public class ManualCamera : MonoBehaviour
 
     [Header("参照パラメータ")]
     [SerializeField, Tooltip("キャラクターや地形等、実態のオブジェクトを表示するカメラ")]
-    GameObject _mainCamera = null;
+    CinemachineVirtualCamera _mainCamera = null;
+
 
     [Header("オプション可変数値")]
     [SerializeField, Tooltip("横方向入力のスイング量レート")]
@@ -103,14 +105,17 @@ public class ManualCamera : MonoBehaviour
         {
             SeekPlayer();
         }
+        //バーチャルカメラが起動中に限り操作
+        else if(_mainCamera.gameObject.activeSelf)
+        {
+            SwitchGravity();
 
-        SwitchGravity();
-
-        ctrlDistance();
-        setCameraTarget();
-        cameraSwing();
-        leadCameraDistination();
-        avoidObject();
+            ctrlDistance();
+            setCameraTarget();
+            cameraSwing();
+            leadCameraDistination();
+            avoidObject();
+        }
     }
 
     /// <summary>操作キャラクターの位置情報をCinemachineに反映</summary>
@@ -125,14 +130,13 @@ public class ManualCamera : MonoBehaviour
         }
     }
 
-
     /// <summary>カメラスイング</summary>
     void cameraSwing()
     {
         //マウス入力情報取得
         Vector2 axis = InputUtility.GetCameraMoveDirection;
         //スティック押し込みがあれば、カメラ縦方向を無効
-        if (InputUtility.GetCameraZoomFlagDown)
+        if (_doZoom)
         {
             axis.y = 0.0f;
         }
@@ -146,7 +150,7 @@ public class ManualCamera : MonoBehaviour
         //カメラ水平角度にスイング量を加算し角度値を、0～360°に補正
         _roundAngle = Mathf.Repeat(_roundAngle + (_deltaHAngle * Time.deltaTime), _CAMERA_ROUND_ANGLE_EXCHANGE);
         //カメラ垂直角度にスイング量を加算し角度値を、上限角～下限角に補正
-        _verticalAngle = Mathf.Clamp(_verticalAngle + (_deltaVAngle * Time.deltaTime), _CAMERA_VERTICAL_ANGLE_LIMIT_LOWER, _CAMERA_VERTICAL_ANGLE_LIMIT_UPPER);
+        _verticalAngle = Mathf.Clamp(_verticalAngle + (-_deltaVAngle * Time.deltaTime), _CAMERA_VERTICAL_ANGLE_LIMIT_LOWER, _CAMERA_VERTICAL_ANGLE_LIMIT_UPPER);
 
         //カメラ回転量を角度より算出し合算
         Vector3 relativePos = Quaternion.Euler(_verticalAngle, _roundAngle, 0) * (Vector3.back * _cameraZoomDistance);
@@ -168,7 +172,7 @@ public class ManualCamera : MonoBehaviour
         //スティック押し込みがあり、かつ、スティック上下入力があればスティック入力を反映
         if (_doZoom)
         {
-            deltaDistance = InputUtility.GetCameraMoveDirection.y * 0.01f;
+            deltaDistance = InputUtility.GetCameraMoveDirection.y * 0.1f;
         }
 
         deltaDistance *= (_zoomRate * Time.deltaTime);

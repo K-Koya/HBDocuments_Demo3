@@ -305,7 +305,7 @@
                     "id": "41d503f7-2a0b-43a9-99b3-d9e66892da57",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=0.05,y=-0.05)",
+                    "processors": "ScaleVector2(x=0.05,y=0.05)",
                     "groups": "",
                     "action": "CameraMove",
                     "isComposite": false,
