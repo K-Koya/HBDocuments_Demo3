@@ -43,7 +43,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakA
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -73,7 +73,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakI
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakU
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -133,7 +133,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakE
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -163,7 +163,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakO
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -176,7 +176,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 2206494437
       script: {fileID: 0}
       typeID: 137
@@ -185,7 +185,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 2371872471
       script: {fileID: 0}
       typeID: 137
@@ -194,7 +194,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 2573122200
       script: {fileID: 0}
       typeID: 137
@@ -203,7 +203,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 2229906172
       script: {fileID: 0}
       typeID: 137
@@ -212,7 +212,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 1681671138
       script: {fileID: 0}
       typeID: 137
@@ -268,7 +268,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakA
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -298,7 +298,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakI
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -328,7 +328,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakU
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -358,7 +358,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakE
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -388,7 +388,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.MouseOpenSpeakO
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0

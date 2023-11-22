@@ -6,49 +6,49 @@ AvatarMask:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EmiriBasic
-  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Name: EmiriFaceMask
+  m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
   - m_Path: Body
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: DenimHotPants
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: DenimJacketShirt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Eyes
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Face
     m_Weight: 1
   - m_Path: Hair
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: LongBoots
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.L/Eye.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Eye.R/Eye.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1
     m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/HairBack1/HairBack1.001
@@ -170,149 +170,149 @@ AvatarMask:
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Neck/Head/Head.001/Head.002/Head.003/Head.004/Head.004_end
     m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal  Thumb.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal  Thumb.L/Intermediate Thumb.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal  Thumb.L/Intermediate Thumb.L/Distal Thumb.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal  Thumb.L/Intermediate Thumb.L/Distal Thumb.L/Distal Thumb.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Index.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Index.L/Intermediate Index.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Index.L/Intermediate Index.L/Distal Index.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Index.L/Intermediate Index.L/Distal Index.L/Distal Index.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Little.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Little.L/Intermediate Little.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Little.L/Intermediate Little.L/Distal Little.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Little.L/Intermediate Little.L/Distal Little.L/Distal
       Little.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Middle.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Middle.L/Intermediate Middle.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Middle.L/Intermediate Middle.L/Distal Middle.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Middle.L/Intermediate Middle.L/Distal Middle.L/Distal
       Middle.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Ring.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Ring.L/Intermediate Ring.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Ring.L/Intermediate Ring.L/Distal Ring.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.L/Upper Arm.L/Lower
       Arm.L/Hand.L/Proximal Ring.L/Intermediate Ring.L/Distal Ring.L/Distal Ring.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal  Thumb.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal  Thumb.R/Intermediate Thumb.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal  Thumb.R/Intermediate Thumb.R/Distal Thumb.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal  Thumb.R/Intermediate Thumb.R/Distal Thumb.R/Distal Thumb.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Index.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Index.R/Intermediate Index.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Index.R/Intermediate Index.R/Distal Index.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Index.R/Intermediate Index.R/Distal Index.R/Distal Index.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Little.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Little.R/Intermediate Little.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Little.R/Intermediate Little.R/Distal Little.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Little.R/Intermediate Little.R/Distal Little.R/Distal
       Little.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Middle.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Middle.R/Intermediate Middle.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Middle.R/Intermediate Middle.R/Distal Middle.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Middle.R/Intermediate Middle.R/Distal Middle.R/Distal
       Middle.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Ring.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Ring.R/Intermediate Ring.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Ring.R/Intermediate Ring.R/Distal Ring.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Shoulder.R/Upper Arm.R/Lower
       Arm.R/Hand.R/Proximal Ring.R/Intermediate Ring.R/Distal Ring.R/Distal Ring.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.L
     m_Weight: 0
   - m_Path: skelton/Root/Hip/Spine/Chest/UpperChest/Under Bust.L/Bust Top.L
@@ -328,22 +328,22 @@ AvatarMask:
       Top.R_end
     m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.L/Lower Leg.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L/Toes.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.L/Lower Leg.L/Foot.L/Toes.L/Toes.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.R/Lower Leg.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R/Toes.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: skelton/Root/Hip/Upper Leg.R/Lower Leg.R/Foot.R/Toes.R/Toes.R_end
-    m_Weight: 1
+    m_Weight: 0
