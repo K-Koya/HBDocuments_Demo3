@@ -65,4 +65,11 @@ public class DollyCartWithEvents : MonoBehaviour
     {
         _dolly.m_Speed = speed;
     }
+
+    /// <summary>該当ドーリーカートの位置を変更</summary>
+    /// <param name="position">DollyTrackにおける位置</param>
+    public void SetDollyCartPosition(float position = 0f)
+    {
+        _dolly.m_Position = position;
+    }
 }
