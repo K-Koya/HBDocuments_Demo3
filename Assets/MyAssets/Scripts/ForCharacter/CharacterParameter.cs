@@ -41,6 +41,9 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     [SerializeField, Tooltip("True : 壁にくっついている")]
     bool _isWall = false;
 
+    [SerializeField, Tooltip("True : ブレーキ中")]
+    bool _isBrake = false;
+
     [SerializeField, Tooltip("地面と壁の境界角度")]
     float _slopeLimit = 45f;
 
@@ -83,8 +86,14 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     /// <summary>True : 壁にくっついている</summary>
     public bool IsWall => _isWall;
 
+    /// <summary>True : ブレーキ中</summary>
+    public bool IsBrake { get => _isBrake; set => _isBrake = value; }
+
     /// <summary>キャラクターの重力向き</summary>
     public Vector3 GravityDirection { get => _gravityDirection; set => _gravityDirection = value; }
+
+    /// <summary>接地中の床の法線</summary>
+    public Vector3 FloorNormal => _floorNormal;
 
     /// <summary>客観速度</summary>
     public float ResultSpeed => _resultSpeed;
@@ -173,48 +182,6 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
         return result;
     }
 
-    /*
-    /// <summary>コースアウト処理</summary>
-    /// <returns>自動アニメーションをかけるインスタンス</returns>
-    public GameObject DoCourseOut()
-    {
-        
-
-        //コースアウトアニメーションを有効にする
-        _stageCourseOut.SetActive(true);
-
-        //速度と向きを維持
-        _stageCourseOut.transform.position = transform.position;
-        _stageCourseOut.transform.rotation = transform.rotation;
-        Rigidbody rb = _stageCourseOut.GetComponent<Rigidbody>();
-        rb.velocity = _rb.velocity;
-        rb.AddTorque(2f, 0f, 0f, ForceMode.VelocityChange);
-                
-        //自分を非アクティブにする
-        gameObject.SetActive(false);
-
-        return _stageCourseOut;
-    }
-    */
-
-    /*
-    /// <summary>ステージクリア処理</summary>
-    /// <returns>自動アニメーションをかけるインスタンス</returns>
-    public GameObject DoStageGoal()
-    {
-        //ステージクリアアニメーションを有効にする
-        _stageClear.SetActive(true);
-
-        //位置と向きを維持
-        _stageClear.transform.position = transform.position;
-        _stageClear.transform.rotation = transform.rotation;
-
-        //自分を非アクティブにする
-        gameObject.SetActive(false);
-
-        return _stageClear;
-    }
-    */
 }
 
 /// <summary>Animator参照用</summary>
@@ -228,6 +195,9 @@ public interface ICharacterParameterForAnimator
 
     /// <summary>True : ジャンプした</summary>
     public bool IsJump { get; }
+
+    /// <summary>True : ブレーキ中</summary>
+    public bool IsBrake {  get; }
 
     /// <summary>重力方向の変更があったことを通知</summary>
     /// <returns>True : 変更あり</returns>

@@ -14,6 +14,9 @@ public class AnimatorForHuman : MonoBehaviour
     [SerializeField, Tooltip("パラメータ名:IsGround")]
     string _paramNameIsGround = "IsGround";
 
+    [SerializeField, Tooltip("パラメータ名:IsBrake")]
+    string _paramNameIsBrake = "IsBrake";
+
     /// <summary>該当キャラクターのアニメーター</summary>
     Animator _anim = null;
 
@@ -34,5 +37,6 @@ public class AnimatorForHuman : MonoBehaviour
         _anim.SetFloat(_paramNameSpeed, _param.ResultSpeed);
         _anim.SetBool(_paramNameIsGround, _param.IsGround);
         _anim.SetBool(_paramNameIsJump, _param.IsJump);
+        _anim.SetBool(_paramNameIsBrake, _param.IsBrake);
     }
 }

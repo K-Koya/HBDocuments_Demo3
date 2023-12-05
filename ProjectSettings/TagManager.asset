@@ -11,11 +11,12 @@ TagManager:
   - Enemy
   - EyePoint
   - GoalDolly
+  - InertiaGround
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcess
   - Water
   - UI
   - Ground
