@@ -10,6 +10,9 @@ public class PlayerMove : MonoBehaviour
     /// <summary>ダッシュジャンプ時のジャンプ力補正値</summary>
     const float _DASH_JUMP_RATIO = 1.5f;
 
+    /// <summary>サイドフリップ時のジャンプ力補正値</summary>
+    const float _SIDE_FLIP_RATIO = 2f;
+
     /// <summary>ブレーキ状態を保つ時間</summary>
     const float _BRAKE_TIME = 0.5f;
 
@@ -176,6 +179,19 @@ public class PlayerMove : MonoBehaviour
                 else
                 {
                     _timer -= Time.deltaTime;
+
+                    //サイドフリップ
+                    if (InputUtility.GetDownJump)
+                    {
+                        _brakeDirection = Vector3.zero;
+                        _timer = 0f;
+                        _param.IsBrake = false;
+                        _param.IsJump = true;
+
+                        transform.forward = _moveForce;
+                        _rb.AddForce(_moveForce + (-_param.GravityDirection * _jumpNormalRate * _SIDE_FLIP_RATIO), ForceMode.VelocityChange);
+                    }
+
                     return;
                 }
             }

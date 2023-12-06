@@ -886,7 +886,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77348
+  m_Name: pb_Mesh33062
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1169,7 +1169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77372
+  m_Name: pb_Mesh33086
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2823,7 +2823,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77396
+  m_Name: pb_Mesh33110
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2988,7 +2988,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77294
+  m_Name: pb_Mesh33008
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -3293,7 +3293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh77444
+  m_Name: pb_Mesh33158
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -111471,7 +111471,7 @@ PrefabInstance:
     - target: {fileID: -6554902183747842133, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0092128385
+      value: 0.009212839
       objectReference: {fileID: 0}
     - target: {fileID: -6554902183747842133, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
@@ -111481,7 +111481,7 @@ PrefabInstance:
     - target: {fileID: -6554902183747842133, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09770003
+      value: -0.09770004
       objectReference: {fileID: 0}
     - target: {fileID: -6301841260956214000, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
@@ -112276,12 +112276,12 @@ PrefabInstance:
     - target: {fileID: 1037657405911254620, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016685873
+      value: -0.016685875
       objectReference: {fileID: 0}
     - target: {fileID: 1037657405911254620, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.11046543
+      value: -0.11046544
       objectReference: {fileID: 0}
     - target: {fileID: 1093856586861757499, guid: 3f17fc9fca39b3943b8b29ace243a021,
         type: 3}
@@ -113469,16 +113469,28 @@ MonoBehaviour:
     swivelRotation: 0
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
-  - enable: 1
+  - enable: 0
     _fixed: 0
     autoRotation: 0
     spaceType: 0
     parent: {fileID: 0}
-    position: {x: -1.3529449, y: 0.86904985, z: -0.15172923}
-    rotation: {x: -0.19174428, y: 0.57871926, z: -0.5176174, w: -0.6003252}
+    position: {x: -1.098363, y: 1.4722489, z: -0.47509018}
+    rotation: {x: 0.89899427, y: -0.15168591, z: -0.053413197, w: -0.4073668}
     headWeight: 1
     eyesWeight: 0
-    swivelRotation: 116.483765
+    swivelRotation: 100.72211
+    swivelPosition: {x: 0, y: 0, z: 0}
+    parentPath: 
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -0.62831306, y: 0.5416582, z: -0.11692759}
+    rotation: {x: -0.3973638, y: 0.55648875, z: -0.7179124, w: 0.1304766}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 109.01688
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
   - enable: 1
@@ -113486,40 +113498,28 @@ MonoBehaviour:
     autoRotation: 0
     spaceType: 0
     parent: {fileID: 0}
-    position: {x: -1.0848069, y: 1.013557, z: 0.42588323}
-    rotation: {x: 0.091096684, y: -0.488057, z: -0.119636, w: 0.859761}
+    position: {x: -1.2888649, y: 0.34230483, z: 0.35132384}
+    rotation: {x: 0.15069468, y: -0.015258983, z: -0.17728758, w: 0.97243375}
     headWeight: 1
     eyesWeight: 0
-    swivelRotation: -94.89563
+    swivelRotation: -17.728638
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
-  - enable: 1
+  - enable: 0
     _fixed: 0
     autoRotation: 0
-    spaceType: 0
+    spaceType: 1
     parent: {fileID: 0}
-    position: {x: -1.2042128, y: 0.10869001, z: 0.21146306}
-    rotation: {x: -0.028635181, y: 0.05913692, z: -0.026710633, w: 0.9974815}
+    position: {x: -0.0031968008, y: 0.0056156297, z: -0.0014957018}
+    rotation: {x: -0.23344474, y: -0.50584245, z: -0.7723098, w: 0.3052294}
     headWeight: 1
     eyesWeight: 0
-    swivelRotation: -6.8345947
-    swivelPosition: {x: 0, y: 0, z: 0}
-    parentPath: 
-  - enable: 1
-    _fixed: 0
-    autoRotation: 0
-    spaceType: 0
-    parent: {fileID: 0}
-    position: {x: -1.0634916, y: 0.10422538, z: 0.5688034}
-    rotation: {x: 0.014009211, y: 0.03705233, z: -0.008778667, w: 0.99917656}
-    headWeight: 1
-    eyesWeight: 0
-    swivelRotation: 1.3555603
+    swivelRotation: -25.130066
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
   originalIkData: []
   selectionData: []
-  lastSelectAnimationClip: {fileID: 7400000, guid: 9cc7d332c22cf42419cb5ce70e073889,
+  lastSelectAnimationClip: {fileID: 7400000, guid: f3444ca8da7259e4cac3b73d9c5122cd,
     type: 2}
   handPoseList: []
   blendShapeList: []
@@ -114119,6 +114119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EmiriPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445589718184833296, guid: 4b82d86b8f53bb342a9f7862282c436b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5469672768648528397, guid: 4b82d86b8f53bb342a9f7862282c436b,
         type: 3}
