@@ -17,6 +17,12 @@ public class AnimatorForHuman : MonoBehaviour
     [SerializeField, Tooltip("パラメータ名:IsBrake")]
     string _paramNameIsBrake = "IsBrake";
 
+    [SerializeField, Tooltip("パラメータ名:DoSideFlip")]
+    string _paramNameDoSideFlip = "DoSideFlip";
+
+    [SerializeField, Tooltip("パラメータ名:DoRunOver")]
+    string _paramNameDoRunOver = "DoRunOver";
+
     /// <summary>該当キャラクターのアニメーター</summary>
     Animator _anim = null;
 
@@ -33,10 +39,20 @@ public class AnimatorForHuman : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         _anim.SetFloat(_paramNameSpeed, _param.ResultSpeed);
         _anim.SetBool(_paramNameIsGround, _param.IsGround);
         _anim.SetBool(_paramNameIsJump, _param.IsJump);
         _anim.SetBool(_paramNameIsBrake, _param.IsBrake);
+
+        if (_param.DoSideFlip)
+        {
+            _anim.SetTrigger(_paramNameDoSideFlip);
+        }
+
+        if (_param.DoRunOver)
+        {
+            _anim.SetTrigger(_paramNameDoRunOver);
+        }
     }
 }

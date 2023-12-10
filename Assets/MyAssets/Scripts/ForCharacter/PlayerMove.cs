@@ -50,14 +50,14 @@ public class PlayerMove : MonoBehaviour
     float _speedRateRun = 4f;
 
     [SerializeField, Tooltip("空中移動力レート")]
-    float _speedRateAir = 4f;
+    float _speedRateAir = 2f;
 
     [SerializeField, Tooltip("通常ジャンプ力レート")]
     float _jumpNormalRate = 5f;
 
 
     /// <summary>各種タイマー</summary>
-    float _timer = 0f;
+    float _brakeTimer = 0f;
 
 
     /// <summary>移動力</summary>
@@ -123,7 +123,8 @@ public class PlayerMove : MonoBehaviour
     /// <param name="targetDirection">目標向き</param>
     /// <param name="up">上方向（Vector.Zeroなら上方向を指定しない）</param>
     /// <param name="rotateSpeed">回転速度</param>
-    void CharacterRotation(Vector3 targetDirection, Vector3 up, float rotateSpeed)
+    /// <param name="isTurnRight">true : 180°ターンは右旋回</param>
+    void CharacterRotation(Vector3 targetDirection, Vector3 up, float rotateSpeed, bool isTurnRight = true)
     {
         if (targetDirection.sqrMagnitude > 0.0f)
         {
@@ -145,7 +146,6 @@ public class PlayerMove : MonoBehaviour
         if (velocityOnPlane.sqrMagnitude > 0.01f)
         {
             velocityOnPlane = Vector3.Normalize(velocityOnPlane);
-            CharacterRotation(velocityOnPlane, -_param.GravityDirection, 720f);
         }
         else
         {
@@ -167,29 +167,27 @@ public class PlayerMove : MonoBehaviour
             if (_param.IsBrake)
             {
                 //ブレーキ動作期限切れor解除
-                if (_timer < 0f || Vector3.Dot(_brakeDirection, _moveForce) < 0.5f)
+                if (_brakeTimer < 0f || Vector3.Dot(_brakeDirection, _moveForce) < 0.5f)
                 {
                     _brakeDirection = Vector3.zero;
-                    _timer = 0f;
+                    _brakeTimer = 0f;
                     _param.IsBrake = false;
 
                     //急加速
-                    _rb.AddForce(_moveForce * _speedRateRun * 0.5f, ForceMode.VelocityChange);
+                    _rb.AddForce(_moveForce * _speedRateWalk * 0.5f, ForceMode.VelocityChange);
                 }
                 else
                 {
-                    _timer -= Time.deltaTime;
+                    _brakeTimer -= Time.deltaTime;
 
                     //サイドフリップ
                     if (InputUtility.GetDownJump)
                     {
                         _brakeDirection = Vector3.zero;
-                        _timer = 0f;
-                        _param.IsBrake = false;
-                        _param.IsJump = true;
+                        _param.DoSideFlip = true;
 
-                        transform.forward = _moveForce;
-                        _rb.AddForce(_moveForce + (-_param.GravityDirection * _jumpNormalRate * _SIDE_FLIP_RATIO), ForceMode.VelocityChange);
+                        transform.rotation = Quaternion.LookRotation(_moveForce, -_param.GravityDirection);
+                        _rb.AddForce(_moveForce + (_jumpNormalRate * _SIDE_FLIP_RATIO * -_param.GravityDirection), ForceMode.VelocityChange);
                     }
 
                     return;
@@ -199,9 +197,28 @@ public class PlayerMove : MonoBehaviour
             else if (!isVelocityOnPlaneZero && Vector3.Dot(velocityOnPlane, _moveForce) < -0.5f)
             {
                 _brakeDirection = _moveForce;
-                _timer = _BRAKE_TIME;
+                _brakeTimer = _BRAKE_TIME;
                 _param.IsBrake = true;
                 return;
+            }
+
+            //壁を見つける
+            var wall = _param.FrontWallContactCheck(_moveForce);
+            if (wall.Item1.HasValue)
+            {
+                //段差や柵を見つける
+                Vector3? step = _param.FrontStepContactCheck(_moveForce);
+                if (step.HasValue)
+                {
+                    transform.position = step.Value;
+                    _rb.velocity = velocityOnPlane;
+                    _param.DoRunOver = true;
+                    Debug.Log("段差の位置 : " + step.Value);
+                }
+                else
+                {
+                    Debug.Log("壁の法線 : " + wall.Item2);
+                }
             }
 
             _moveForce *= _speedRateRun;
@@ -213,7 +230,7 @@ public class PlayerMove : MonoBehaviour
             if (_param.IsBrake)
             {
                 _brakeDirection = Vector3.zero;
-                _timer = 0f;
+                _brakeTimer = 0f;
                 _param.IsBrake = false;
             }
 
@@ -227,6 +244,7 @@ public class PlayerMove : MonoBehaviour
         if (InputUtility.GetDownJump)
         {
             _param.IsJump = true;
+            _param.IsBrake = false;
             _rb.drag = _dragForAir;
             float ratio = InputUtility.GetMove ? _DASH_JUMP_RATIO : 1f;
             _rb.AddForce(_jumpNormalRate * ratio * -_param.GravityDirection, ForceMode.VelocityChange);
@@ -235,6 +253,12 @@ public class PlayerMove : MonoBehaviour
         {
             _param.IsJump = false;
         }
+
+        //向き回転
+        if (!isVelocityOnPlaneZero)
+        {
+            CharacterRotation(velocityOnPlane, -_param.GravityDirection, 720f, false);
+        }
     }
 
     /// <summary>空中落下時における移動制御</summary>
@@ -242,18 +266,48 @@ public class PlayerMove : MonoBehaviour
     {
         _rb.drag = _dragForAir;
 
+        _brakeTimer = 0f;
+        _param.IsBrake = false;
+
+        //向き指定
+        Vector3 velocityOnPlane = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
+        if (_moveForce.sqrMagnitude > 0.01f)
+        {
+            velocityOnPlane = Vector3.Normalize(velocityOnPlane);
+            CharacterRotation(velocityOnPlane, -_param.GravityDirection, 90f, false);
+        }
+
         if (InputUtility.GetMove)
         {
             Vector3 cameraForwardOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.forward, -_param.GravityDirection));
             Vector3 cameraRightOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.right, -_param.GravityDirection));
             _moveForce = ((cameraForwardOnPlayerFloor * InputUtility.GetMoveDirection.y)
-                                + (cameraRightOnPlayerFloor * InputUtility.GetMoveDirection.x))
-                                * _speedRateAir;
+                                + (cameraRightOnPlayerFloor * InputUtility.GetMoveDirection.x));
+
+            //壁を見つける
+            var wall = _param.FrontWallContactCheck(_moveForce);
+            if (wall.Item1.HasValue)
+            {
+                //段差や柵を見つける
+                Vector3? step = _param.FrontStepContactCheck(_moveForce);
+                if (step.HasValue)
+                {
+                    transform.position = step.Value;
+                    _rb.velocity = velocityOnPlane;
+                    _param.DoRunOver = true;
+                    Debug.Log("段差の位置 : " + step.Value);
+                }
+                else
+                {
+                    Debug.Log("壁の法線 : " + wall.Item2);
+                }
+            }
         }
         else
         {
             _moveForce = Vector3.zero;
         }
+
 
         if (_param.IsJump && !InputUtility.GetJump)
         {
@@ -261,14 +315,7 @@ public class PlayerMove : MonoBehaviour
             _rb.velocity = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
         }
 
-        //向き指定
-        Vector3 velocityOnPlane = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
-        if (_moveForce.sqrMagnitude > 0.01f)
-        {
-            velocityOnPlane = Vector3.Normalize(velocityOnPlane);
-            CharacterRotation(velocityOnPlane, -_param.GravityDirection, 90f);
-        }
-
+        _moveForce *= _speedRateAir;
         _gravityForce = _param.GravityDirection * _GRAVITY_POWER;
     }
 }
