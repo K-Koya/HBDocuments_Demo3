@@ -224,7 +224,7 @@ public class ManualCamera : MonoBehaviour
         if (Physics.Linecast(_cameraTarget.transform.position, _mainCamera.transform.position, out rayhitGround, LayerManager.Instance.Ground))
         {
             //_mainCamera.transform.position = Vector3.Lerp(rayhitGround.point, _mainCamera.transform.position, 0.2f);
-            _mainCamera.transform.position = rayhitGround.point;
+            _mainCamera.transform.position = rayhitGround.point + _mainCamera.transform.forward;
         }
     }
 
@@ -232,6 +232,10 @@ public class ManualCamera : MonoBehaviour
     void SwitchGravity()
     {
         float dot = Vector3.Dot(transform.up, _param.GravityDirection);
+        if(dot > 0.99f)
+        {
+            transform.up += _mainCamera.transform.right * 0.05f;
+        }
         if (dot > -0.99f)
         {
             //transform.up = Vector3.Lerp(transform.up, -_param.GravityDirection, 3f * Time.deltaTime);

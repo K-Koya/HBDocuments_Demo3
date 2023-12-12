@@ -120,6 +120,17 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
         set => _isRunOver = value;
     }
 
+    /// <summary>True : 重力が瞬間的に変わった</summary>
+    public bool DoSwitchGravity
+    {
+        get
+        {
+            bool result = _doSwitchGravity;
+            _doSwitchGravity = false;
+            return result;
+        }
+    }
+
     /// <summary>キャラクターの重力向き</summary>
     public Vector3 GravityDirection { get => _gravityDirection; set => _gravityDirection = value; }
 
@@ -255,15 +266,6 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
         _doSwitchGravity = true;
     }
 
-    /// <summary>重力方向の変更があったことを通知</summary>
-    /// <returns>True : 変更あり</returns>
-    public bool DoGravitySwitch()
-    {
-        bool result = _doSwitchGravity;
-        _doSwitchGravity = false;
-        return result;
-    }
-
 }
 
 /// <summary>Animator参照用</summary>
@@ -287,9 +289,8 @@ public interface ICharacterParameterForAnimator
     /// <summary>True : 柵・段差乗り越えを実施</summary>
     public bool DoRunOver { get; }
 
-    /// <summary>重力方向の変更があったことを通知</summary>
-    /// <returns>True : 変更あり</returns>
-    public bool DoGravitySwitch();
+    /// <summary>True : 重力が瞬間的に変わった</summary>
+    public bool DoSwitchGravity { get; }
 }
 
 /// <summary>カメラ制御参照用</summary>

@@ -17,6 +17,9 @@ public class AnimatorForHuman : MonoBehaviour
     [SerializeField, Tooltip("パラメータ名:IsBrake")]
     string _paramNameIsBrake = "IsBrake";
 
+    [SerializeField, Tooltip("パラメータ名:DoSwitchGravity")]
+    string _paramNameDoSwitchGravity = "DoSwitchGravity";
+
     [SerializeField, Tooltip("パラメータ名:DoSideFlip")]
     string _paramNameDoSideFlip = "DoSideFlip";
 
@@ -44,6 +47,11 @@ public class AnimatorForHuman : MonoBehaviour
         _anim.SetBool(_paramNameIsGround, _param.IsGround);
         _anim.SetBool(_paramNameIsJump, _param.IsJump);
         _anim.SetBool(_paramNameIsBrake, _param.IsBrake);
+
+        if (_param.DoSwitchGravity)
+        {
+            _anim.SetTrigger(_paramNameDoSwitchGravity);
+        }
 
         if (_param.DoSideFlip)
         {
