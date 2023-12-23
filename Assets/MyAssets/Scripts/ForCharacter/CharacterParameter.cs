@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.ProBuilder;
 
 [DefaultExecutionOrder(-1)]
-public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator, ICharacterParameterForCamera, ICourseOutProcedurer, IStageGoalProcedurer
+public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator, ICharacterParameterForCamera, ICharacterParameterForTutorial, ICourseOutProcedurer, IStageGoalProcedurer
 {
     #region 定数
     /// <summary>接地判定をとるために使う球体の半径が、コライダーの半径の何倍かを示す数値</summary>
@@ -44,6 +44,9 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     [SerializeField, Tooltip("True : ブレーキ中")]
     bool _isBrake = false;
 
+    [SerializeField, Tooltip("True : 壁張り付き中")]
+    bool _isWall = false;
+
     /// <summary>True : サイドフリップを実施</summary>
     bool _isSideFlip = false;
 
@@ -63,7 +66,7 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     Vector3 _floorNormal = Vector3.up;
 
     /// <summary>接触中の壁の法線</summary>
-    Vector3 _wallNormal = Vector3.forward;
+    Vector3? _wallNormal = null;
     
     /// <summary>登れる坂とみなすための中心点からの距離</summary>
     float _slopeAngleThreshold = 1f;
@@ -95,28 +98,20 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     /// <summary>True : ブレーキ中</summary>
     public bool IsBrake { get => _isBrake; set => _isBrake = value; }
 
+    /// <summary>True : 壁張り付き中</summary>
+    public bool IsWall { get => _isWall; set => _isWall = value; }
+
     /// <summary>True : サイドフリップを実施</summary>
     public bool DoSideFlip
     {
-        get
-        {
-            bool data = _isSideFlip;
-            if(_isSideFlip) _isBrake = false;
-            _isSideFlip = false;
-            return data;
-        }
+        get => _isSideFlip;
         set => _isSideFlip = value;
     }
 
     /// <summary>True : 柵・段差乗り越えを実施</summary>
     public bool DoRunOver
     {
-        get
-        {
-            bool data = _isRunOver;
-            _isRunOver = false;
-            return data;
-        }
+        get => _isRunOver;
         set => _isRunOver = value;
     }
 
@@ -125,10 +120,11 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     {
         get
         {
-            bool result = _doSwitchGravity;
+            bool data = _doSwitchGravity;
             _doSwitchGravity = false;
-            return result;
+            return data;
         }
+        set => _doSwitchGravity = value;
     }
 
     /// <summary>キャラクターの重力向き</summary>
@@ -138,7 +134,7 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     public Vector3 FloorNormal => _floorNormal;
 
     /// <summary>接触中の壁の法線</summary>
-    public Vector3 WallNormal => _wallNormal;
+    public Vector3? WallNormal => _wallNormal;
 
     /// <summary>客観速度</summary>
     public float ResultSpeed => _resultSpeed;
@@ -164,13 +160,12 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     {
         //ポーズ時は処理しない
         if (PauseManager.Instance.IsPause) return;
-
-        GroundCheck();
     }
 
     void FixedUpdate()
     {
         SpeedCheck();
+        GroundCheck();
     }
 
     /// <summary>接地判定処理</summary>
@@ -212,6 +207,8 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
 
         Vector3 capsuleCastBaseTop = -_gravityDirection * (_collider.height - (_collider.radius * 2f));
         Vector3 capsuleCastBaseBottom = -_gravityDirection * (_collider.radius * 2f);
+
+        _wallNormal = null;
         
         //壁の存在を取得
         RaycastHit hit;
@@ -220,6 +217,8 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
         {
             normal = hit.normal;
             point = hit.point;
+
+            _wallNormal = normal;
         }
 
         return (point, normal);
@@ -240,10 +239,14 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
                                 _collider.radius * _GROUND_CHECK_RADIUS_RATE, direction, _collider.radius * 2f, LayerManager.Instance.Ground))
         {
             RaycastHit hit;
-            onStep = capsuleCastBaseTop + transform.position + (direction * _collider.radius * 2.1f);
-            if (Physics.SphereCast(onStep.Value, _collider.radius, _gravityDirection, out hit, _collider.height, LayerManager.Instance.Ground))
+            Vector3 sphereCastBase = capsuleCastBaseTop + transform.position + (direction * _collider.radius * 2.1f);
+            if (Physics.SphereCast(sphereCastBase, _collider.radius, _gravityDirection, out hit, _collider.height, LayerManager.Instance.Ground))
             {
                 onStep = hit.point;
+            }
+            else
+            {
+                onStep = capsuleCastBaseBottom + transform.position + (_collider.radius * 2.1f * direction);
             }
         }
 
@@ -259,11 +262,16 @@ public class CharacterParameter : MonoBehaviour, ICharacterParameterForAnimator,
     /// <summary>重力方向を変更</summary>
     public void SwitchGravity(Vector3 gravityDirection)
     {
-        _gravityDirection = gravityDirection;
-        Vector3 forward = Vector3.ProjectOnPlane(_rb.velocity, -gravityDirection);
-        transform.up = -gravityDirection;
-        transform.rotation = Quaternion.LookRotation(forward, -gravityDirection);
-        _doSwitchGravity = true;
+        float dot = Vector3.Dot(_gravityDirection, gravityDirection);
+
+        if (dot < 1f)
+        {
+            _gravityDirection = gravityDirection;
+            Vector3 forward = Vector3.ProjectOnPlane(_rb.velocity, -gravityDirection);
+            transform.up = -gravityDirection;
+            transform.rotation = Quaternion.LookRotation(forward, -gravityDirection);
+            _doSwitchGravity = true;
+        }
     }
 
 }
@@ -282,6 +290,9 @@ public interface ICharacterParameterForAnimator
 
     /// <summary>True : ブレーキ中</summary>
     public bool IsBrake { get; }
+
+    /// <summary>True : 壁張り付き中</summary>
+    public bool IsWall { get; }
 
     /// <summary>True : サイドフリップを実施</summary>
     public bool DoSideFlip { get; }
@@ -305,6 +316,34 @@ public interface ICharacterParameterForCamera
     /// <summary>キャラクターの重力向き</summary>
     public Vector3 GravityDirection { get; }
 }
+
+public interface ICharacterParameterForTutorial
+{
+    /// <summary>客観速度</summary>
+    public float ResultSpeed { get; }
+
+    /// <summary>true : 着地している</summary>
+    public bool IsGround { get; }
+
+    /// <summary>True : ジャンプした</summary>
+    public bool IsJump { get; }
+
+    /// <summary>True : ブレーキ中</summary>
+    public bool IsBrake { get; }
+
+    /// <summary>True : 壁張り付き中</summary>
+    public bool IsWall { get; }
+
+    /// <summary>True : サイドフリップを実施</summary>
+    public bool DoSideFlip { get; set; }
+
+    /// <summary>True : 柵・段差乗り越えを実施</summary>
+    public bool DoRunOver { get; set; }
+
+    /// <summary>True : 重力が瞬間的に変わった</summary>
+    public bool DoSwitchGravity { get; set; }
+}
+
 
 /// <summary>ステージギミックからの干渉用</summary>
 public interface IInteractGimmicks

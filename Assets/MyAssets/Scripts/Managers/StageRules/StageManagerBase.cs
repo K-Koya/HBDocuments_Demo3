@@ -1,6 +1,4 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StageManagerBase : MonoBehaviour
@@ -9,76 +7,84 @@ public class StageManagerBase : MonoBehaviour
     const byte _BASE_CAMERA_PRIORITY = 20;
 
     /// <summary>現在のステージのマネージャー</summary>
-    static StageManagerBase _Current = null;
+    static protected StageManagerBase _Current = null;
 
     /// <summary>現在の操作キャラクター</summary>
-    static CharacterKind _CurrentCharacter = CharacterKind.Emiri;
+    static protected CharacterKind _CurrentCharacter = CharacterKind.Emiri;
 
     /// <summary>デモムービー表示用キャラクター</summary>
-    static GameObject _CharacterForDemo = null;
+    static protected GameObject _CharacterForDemo = null;
 
     /// <summary>コースアウト時表示用キャラクター</summary>
-    static GameObject _CharacterForCourseOut = null;
+    static protected GameObject _CharacterForCourseOut = null;
 
     /// <summary>操作キャラクター</summary>
-    static GameObject _CharacterForControl = null;
+    static protected GameObject _CharacterForControl = null;
+
+
+    /// <summary>デモムービー表示用キャラクターのアニメーション制御</summary>
+    protected AnimatorForDemoMovie _characterForDemoAnim = null;
 
 
     [SerializeField, Tooltip("ステージ挑戦時の状態")]
-    StateOnStage _state = StateOnStage.Playing;
+    protected StateOnStage _state = StateOnStage.Playing;
 
 
     [Header("ステージ開始時のデモ用部品")]
+    [SerializeField, Tooltip("キャラクターの最初の正面方向と同じ向きのオブジェクトを指定")]
+    protected Transform _characterFrontReference = null;
+
     [SerializeField, Tooltip("ステージ開始時のデモを流すカメラ")]
-    CinemachineVirtualCamera _introCamera = null;
+    protected CinemachineVirtualCamera _introCamera = null;
 
     [SerializeField, Tooltip("ステージ開始時のデモを流すカメラを添わせるDollyCart")]
-    CinemachineDollyCart _introCameraDollyCart = null;
+    protected CinemachineDollyCart _introCameraDollyCart = null;
 
     [SerializeField, Tooltip("ステージ開始デモ時にキャラクターを添わせるDollyCart")]
-    CinemachineDollyCart _introDollyCart = null;
+    protected CinemachineDollyCart _introDollyCart = null;
 
 
     [Header("ステージ挑戦中の部品")]
     [SerializeField, Tooltip("キャラクターや地形等、実態のオブジェクトを表示するカメラ")]
-    CinemachineVirtualCamera _mainCamera = null;
+    protected CinemachineVirtualCamera _mainCamera = null;
 
 
     [Header("ステージコースアウトのデモ用部品")]
     [SerializeField, Tooltip("ステージコースアウトなど、失敗時に利用するカメラ")]
-    CinemachineVirtualCamera _missCamera = null;
+    protected CinemachineVirtualCamera _missCamera = null;
 
     [SerializeField, Tooltip("コースアウト後、いつメニューに移行するかを指定")]
-    float _missMenuSwitchTime = 3f;
+    protected float _missMenuSwitchTime = 3f;
 
 
     [Header("ステージクリア時のデモ用部品")]
-    [SerializeField, Tooltip("ステージクリア時のデモを流すはじめのカメラ")]
-    CinemachineVirtualCamera _clearCamera = null;
-
     [SerializeField, Tooltip("ステージクリア時のデモを流す次のカメラ")]
-    CinemachineVirtualCamera _clearAnimationCamera = null;
+    protected CinemachineVirtualCamera _clearAnimationCamera = null;
 
     [SerializeField, Tooltip("ステージクリア時にキャラクターを添わせるDollyCart")]
-    CinemachineDollyCart _clearDollyCart = null;
+    protected CinemachineDollyCart _clearDollyCart = null;
+
+    /// <summary>ステージクリア時のデモを流すはじめのカメラ</summary>
+    protected CinemachineVirtualCamera _clearCamera = null;
+
+    /// <summary>次に飛ぶシーン名</summary>
+    protected string _nextSceneName = "EntranceStage";
 
 
     /// <summary>各種時間制御用タイマー</summary>
-    float _timer = 0f;
+    protected float _timer = 0f;
 
 
     /// <summary>デモカメラを映している時に注視する対象</summary>
-    Transform _demoCameraTarget = null;
+    protected Transform _demoCameraTarget = null;
 
     /// <summary>デモカメラを映している時に上向きになるベクトル</summary>
-    Vector3 _demoCameraUp = Vector3.up;
+    protected Vector3 _demoCameraUp = Vector3.up;
 
 
 
-
-    
     /// <summary>True : 初期化処理を実施する</summary>
-    bool _doInit = true;
+    protected bool _doInit = true;
 
 
     /// <summary>ステージ挑戦時の状態</summary>
@@ -116,6 +122,9 @@ public class StageManagerBase : MonoBehaviour
         if (!_CharacterForCourseOut) _CharacterForCourseOut = Instantiate(prefabs.forUseRigidBody);
         if (!_CharacterForDemo) _CharacterForDemo = Instantiate(prefabs.forNotUseRigidBody);
         _CharacterForControl.transform.position = _introDollyCart.m_Path.transform.position;
+        _CharacterForControl.transform.forward = _characterFrontReference.transform.forward;
+
+        _characterForDemoAnim = _CharacterForDemo.GetComponentInChildren<AnimatorForDemoMovie>();
 
         //キャラクター非活性化
         _CharacterForControl.SetActive(false);
@@ -126,7 +135,6 @@ public class StageManagerBase : MonoBehaviour
         _introCamera.gameObject.SetActive(false);
         _mainCamera.gameObject.SetActive(false);
         _missCamera.gameObject.SetActive(false);
-        _clearCamera.gameObject.SetActive(false);
         _clearAnimationCamera.gameObject.SetActive(false);
 
         //ドーリーカート非活性化
@@ -138,7 +146,6 @@ public class StageManagerBase : MonoBehaviour
         _introCamera.Priority = _BASE_CAMERA_PRIORITY;
         _mainCamera.Priority = _BASE_CAMERA_PRIORITY + 1;
         _missCamera.Priority = _BASE_CAMERA_PRIORITY;
-        _clearCamera.Priority = _BASE_CAMERA_PRIORITY;
     }
 
     void OnDestroy()
@@ -236,6 +243,8 @@ public class StageManagerBase : MonoBehaviour
                     _demoCameraTarget = _CharacterForDemo.transform;
                     _demoCameraUp = _mainCamera.transform.parent.up;
 
+                    _characterForDemoAnim.SwitchToJumpToGoalGate();
+
                     _doInit = false;
                 }
 
@@ -275,7 +284,7 @@ public class StageManagerBase : MonoBehaviour
                 _missCamera.transform.LookAt(_demoCameraTarget.position, _demoCameraUp);
 
                 //指定時間後にシーンを再ロード
-                if(_timer < 0f)
+                if (_timer < 0f)
                 {
                     _timer = 0f;
                     SceneChangeManager.Instance.LoadSelf();
@@ -309,6 +318,37 @@ public class StageManagerBase : MonoBehaviour
     {
         State = StateOnStage.MissMenu;
     }
+
+    /// <summary>ステージ挑戦中からステージクリアデモに変更</summary>
+    public void PlayingToClearDemo(CinemachineSmoothPath mainTrack, CinemachineVirtualCamera fixedCamera, string nextScene)
+    {
+        _clearDollyCart.m_Path = mainTrack;
+        _clearCamera = fixedCamera;
+        _nextSceneName = nextScene;
+        State = StateOnStage.ClearDemo;
+    }
+
+    /// <summary>導入デモ中着地</summary>
+    public void IntroLanding()
+    {
+        _characterForDemoAnim.SwitchToLandingBeforeGlide();
+        _CharacterForDemo.transform.parent = null;
+        _CharacterForDemo.transform.position = _CharacterForControl.transform.position;
+    }
+
+    /// <summary>ステージクリアデモ途中のカメラ変更</summary>
+    public void ClearDemoSwitchCamera()
+    {
+        _clearAnimationCamera.Priority = _clearCamera.Priority + 1;
+        _clearAnimationCamera.gameObject.SetActive(true);
+        _clearCamera.gameObject.SetActive(false);
+    }
+
+    /// <summary>登録されたシーンに飛ぶ</summary>
+    public void SceneChange()
+    {
+        SceneChangeManager.Instance.ChangeTo(_nextSceneName);
+    }
 }
 
 /// <summary>ステージ挑戦時の状態</summary>
@@ -328,5 +368,7 @@ public enum StateOnStage : byte
     MissMenu = 11,
 
     /// <summary>タイトル</summary>
-    Title = 100,
+    Title = 30,
+
+
 }

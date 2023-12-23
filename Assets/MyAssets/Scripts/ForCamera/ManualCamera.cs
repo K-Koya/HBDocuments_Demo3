@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class ManualCamera : MonoBehaviour
+public class ManualCamera : MonoBehaviour, ICameraForTutorial
 {
     #region 定数
     /// <summary> カメラ方向が目的地に着いたとみなす距離 </summary>
@@ -86,7 +86,17 @@ public class ManualCamera : MonoBehaviour
 
     /// <summary>メインカメラを向かわせる目的地</summary>
     Vector3 _cameraDestination = Vector3.zero;
+
     #endregion
+
+    /// <summary>1フレーム毎のカメラ横回転角</summary>
+    public float DeltaHAngle => _deltaHAngle;
+
+    /// <summary>1フレーム毎のカメラ縦回転角</summary>
+    public float DeltaVAngle => _deltaVAngle;
+
+
+
 
 
     // Start is called before the first frame update
@@ -224,7 +234,7 @@ public class ManualCamera : MonoBehaviour
         if (Physics.Linecast(_cameraTarget.transform.position, _mainCamera.transform.position, out rayhitGround, LayerManager.Instance.Ground))
         {
             //_mainCamera.transform.position = Vector3.Lerp(rayhitGround.point, _mainCamera.transform.position, 0.2f);
-            _mainCamera.transform.position = rayhitGround.point + _mainCamera.transform.forward;
+            _mainCamera.transform.position = rayhitGround.point + _mainCamera.transform.forward * 0.5f;
         }
     }
 
@@ -246,4 +256,13 @@ public class ManualCamera : MonoBehaviour
             transform.up = -_param.GravityDirection;
         }
     }
+}
+
+public interface ICameraForTutorial
+{
+    /// <summary>カメラ水平回転量</summary>
+    public float DeltaHAngle { get; }
+
+    /// <summary>カメラ鉛直回転量</summary>
+    public float DeltaVAngle { get; }
 }

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>床・障害物等が動くギミックを管理</summary>
@@ -74,7 +76,7 @@ public class ObjectMovement : MonoBehaviour
 
 
 
-    /// <summary>何番目の移動先へ向かっているか</summary>
+    [SerializeField, Tooltip("次の目的地番号")]
     int _tripCount = 0;
 
     /// <summary>待機時間</summary>
@@ -175,13 +177,25 @@ public class ObjectMovement : MonoBehaviour
 
         //listに値がない場合は例外回避のため基準値をAdd
         if (_tripInfos.Count <= 0) _tripInfos.Add(new TripInfo());
+        
+        //初期移動先が配列範囲外なら補正
+        if(_tripCount > _tripInfos.Count - 2)
+        {
+            _tripCount = _tripInfos.Count - 1;
+        }
 
         //初期位置を調整
-        if (_tripInfos[0].Point != Vector3.zero) transform.position = _tripInfos[0].Point;
+        if(_tripCount == 0)
+        {
+            transform.position = _tripInfos.Last().Point;
+        }
+        else
+        {
+            transform.position = _tripInfos[_tripCount - 1].Point;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //ポーズ中であるか、停止指示がある場合、処理をしない
         if (_isStop) return;

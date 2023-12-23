@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,8 +57,11 @@ public class PlayerMove : MonoBehaviour
     float _jumpNormalRate = 5f;
 
 
-    /// <summary>各種タイマー</summary>
+    /// <summary>ブレーキタイマー</summary>
     float _brakeTimer = 0f;
+
+    /// <summary>True : 直前のフレームは接地していた</summary>
+    bool _isGroundBeforeFrame = false;
 
 
     /// <summary>移動力</summary>
@@ -99,11 +103,16 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        //ポーズ時は止める
-        if (PauseManager.Instance.IsPause) return;
-
         _rb.AddForce(_moveForce, ForceMode.Acceleration);
         _rb.AddForce(_gravityForce, ForceMode.Acceleration);
+
+        //着地衝撃緩和
+        if(_param.IsGround && !_isGroundBeforeFrame)
+        {
+            _rb.velocity = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
+        }
+
+        _isGroundBeforeFrame = _param.IsGround;
     }
 
     /// <summary>_MoveControlを現在のプレイヤーの状態から切り替える</summary>
@@ -132,7 +141,7 @@ public class PlayerMove : MonoBehaviour
             Quaternion charDirectionQuaternion = Quaternion.identity;
             if (up.sqrMagnitude > 0f) charDirectionQuaternion = Quaternion.LookRotation(targetDirection + (trunDirection * 0.001f), up);
             else charDirectionQuaternion = Quaternion.LookRotation(targetDirection + (trunDirection * 0.001f));
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, charDirectionQuaternion, rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, charDirectionQuaternion, rotateSpeed * Time.fixedDeltaTime);
         }
     }
 
@@ -140,6 +149,9 @@ public class PlayerMove : MonoBehaviour
     void GroundMove()
     {
         bool isVelocityOnPlaneZero = false;
+
+        _param.DoSideFlip = false;
+        _param.DoRunOver = false;
 
         //向き指定
         Vector3 velocityOnPlane = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
@@ -213,11 +225,10 @@ public class PlayerMove : MonoBehaviour
                     transform.position = step.Value;
                     _rb.velocity = velocityOnPlane;
                     _param.DoRunOver = true;
-                    Debug.Log("段差の位置 : " + step.Value);
                 }
                 else
                 {
-                    Debug.Log("壁の法線 : " + wall.Item2);
+
                 }
             }
 
@@ -266,6 +277,9 @@ public class PlayerMove : MonoBehaviour
     {
         _rb.drag = _dragForAir;
 
+        _param.DoSideFlip = false;
+        _param.DoRunOver = false;
+
         _brakeTimer = 0f;
         _param.IsBrake = false;
 
@@ -295,11 +309,11 @@ public class PlayerMove : MonoBehaviour
                     transform.position = step.Value;
                     _rb.velocity = velocityOnPlane;
                     _param.DoRunOver = true;
-                    Debug.Log("段差の位置 : " + step.Value);
                 }
                 else
                 {
-                    Debug.Log("壁の法線 : " + wall.Item2);
+                    transform.rotation = Quaternion.LookRotation(-wall.Item2, -_param.GravityDirection);
+                    _param.IsWall = true;
                 }
             }
         }
@@ -317,5 +331,90 @@ public class PlayerMove : MonoBehaviour
 
         _moveForce *= _speedRateAir;
         _gravityForce = _param.GravityDirection * _GRAVITY_POWER;
+    }
+
+    /// <summary>壁張り付きの移動制御</summary>
+    void WallMove()
+    {
+        _rb.drag = _dragForMove;
+
+        //壁を見つける
+        if (_param.WallNormal.HasValue)
+        {
+            var wall = _param.FrontWallContactCheck(-_param.WallNormal.Value);
+            if (wall.Item1.HasValue)
+            {
+                //段差や柵を見つける
+                Vector3? step = _param.FrontStepContactCheck(-_param.WallNormal.Value);
+                if (step.HasValue)
+                {
+                    transform.position = step.Value;
+                    _param.DoRunOver = true;
+                }
+            }
+            //壁がない場合は壁張り付き解除
+            else
+            {
+                _param.IsWall = false;
+            }
+
+            //移動入力の有無
+            if (InputUtility.GetMove)
+            {
+                //接地中は壁沿いに移動
+                if (_param.IsGround)
+                {
+                    Vector3 cameraForwardOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.forward, -_param.GravityDirection));
+                    Vector3 cameraRightOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.right, -_param.GravityDirection));
+                    _moveForce = (cameraForwardOnPlayerFloor * InputUtility.GetMoveDirection.y)
+                                        + (cameraRightOnPlayerFloor * InputUtility.GetMoveDirection.x);
+
+                    //壁向き成分を無効化
+                    if(Vector3.Dot(_moveForce, _param.WallNormal.Value) < 0f)
+                    {
+                        _moveForce = Vector3.ProjectOnPlane(_moveForce, _param.WallNormal.Value);
+                    }
+                }
+                else
+                {
+                    //操作平面法線
+                    Vector3 controlWallNormal = _param.WallNormal.Value;
+
+                    //カメラ正面が壁に対して垂直になることを回避
+                    Vector3 controlInputNormal = _targetingCamera.forward;
+
+                    //操作反転回避
+                    float dot = Vector3.Dot(controlWallNormal, _targetingCamera.forward);
+                    if (dot > 0f)
+                    {
+                        controlWallNormal *= -1f;
+                    }
+                    //ProjectOnPlane不可を回避
+                    /*
+                    else if(dot == 0f)
+                    {
+
+                    }
+                    */
+
+
+                    Vector3 cameraForwardOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.up, controlWallNormal));
+                    Vector3 cameraRightOnPlayerFloor = Vector3.Normalize(Vector3.ProjectOnPlane(_targetingCamera.right, controlWallNormal));
+                    _moveForce = ((cameraForwardOnPlayerFloor * InputUtility.GetMoveDirection.y)
+                                        + (cameraRightOnPlayerFloor * InputUtility.GetMoveDirection.x));
+
+                    
+                }
+            }
+            else
+            {
+                _moveForce = Vector3.zero;
+            }
+        }
+        //壁がない場合は壁張り付き解除
+        else
+        {
+            _param.IsWall = false;
+        }
     }
 }

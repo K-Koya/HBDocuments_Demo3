@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SwitchGravityArea : MonoBehaviour
 {
-
     void OnTriggerEnter(Collider other)
     {
         //キャラクターの重力方向をこのオブジェクトの下方向へ

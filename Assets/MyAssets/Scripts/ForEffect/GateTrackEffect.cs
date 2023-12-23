@@ -33,6 +33,9 @@ public class GateTrackEffect : MonoBehaviour
     /// <summary>TrailRendererのtime保管 2</summary>
     float _trail2TimeCache = 0f;
 
+    /// <summary>true : ゲートの終点に到達</summary>
+    bool _isReachedTerminal = false;
+
     /// <summary>該当のドーリーカート</summary>
     CinemachineDollyCart _dolly = null;
 
@@ -51,7 +54,7 @@ public class GateTrackEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseManager.Instance.IsPause)
+        if (_isReachedTerminal || PauseManager.Instance.IsPause)
         {
             return;
         }
@@ -99,8 +102,11 @@ public class GateTrackEffect : MonoBehaviour
     /// <summary>一定時間後にスタート地点に戻るコルーチン</summary>
     IEnumerator RepeatStartPositionCoroutine()
     {
+        _isReachedTerminal = true;
+
         yield return _waitRepeatDelay;
 
+        _isReachedTerminal = false;
         _trail1.enabled = false;
         _trail2.enabled = false;
         _dolly.m_Position = 0f;

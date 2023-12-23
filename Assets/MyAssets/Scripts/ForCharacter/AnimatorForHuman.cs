@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[DefaultExecutionOrder(1)]
+[DefaultExecutionOrder(2)]
 public class AnimatorForHuman : MonoBehaviour
 {
     [SerializeField, Tooltip("ƒpƒ‰ƒ[ƒ^–¼:Speed")]
