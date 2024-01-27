@@ -73,7 +73,6 @@ public class TutorialBrakeAndSideFlip : MonoBehaviour
             yield return null;
             if (_character.DoSideFlip)
             {
-                _character.DoSideFlip = true;
                 _isCleared = true;
             }
         }

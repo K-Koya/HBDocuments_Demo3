@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterPrefabManager : Singleton<CharacterPrefabManager>
 {
+    [SerializeField, Tooltip("足元の位置として投影するオブジェクトプレハブ")]
+    public GameObject _forFootPointShadow = null;
+
     /// <summary>該当キャラクター向けのプレハブ集</summary>
     [System.Serializable]
     public struct Prefabs
@@ -30,6 +33,10 @@ public class CharacterPrefabManager : Singleton<CharacterPrefabManager>
     {
         return _prefabs[(int)kind];
     }
+
+    /// <summary>足元の位置として投影するオブジェクトプレハブ</summary>
+    public GameObject ForFootPointShadow { get => _forFootPointShadow; }
+
 }
 
 /// <summary>キャラクター種別</summary>

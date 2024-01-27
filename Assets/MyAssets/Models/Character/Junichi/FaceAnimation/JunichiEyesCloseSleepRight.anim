@@ -43,7 +43,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeCloseSleepR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -73,7 +73,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeCloseSmileR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeShapeDoubtR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -133,7 +133,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeOpenSurprisedR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -146,7 +146,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 1538067130
       script: {fileID: 0}
       typeID: 137
@@ -155,7 +155,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 343884073
       script: {fileID: 0}
       typeID: 137
@@ -164,7 +164,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 3535044247
       script: {fileID: 0}
       typeID: 137
@@ -173,7 +173,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 2273934316
       script: {fileID: 0}
       typeID: 137
@@ -229,7 +229,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeCloseSleepR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -259,7 +259,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeCloseSmileR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -289,7 +289,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeShapeDoubtR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -319,7 +319,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyeOpenSurprisedR
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0

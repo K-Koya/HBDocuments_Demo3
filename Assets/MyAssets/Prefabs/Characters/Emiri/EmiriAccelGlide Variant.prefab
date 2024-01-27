@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4894689565847851646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2453041216535140667}
+  m_Layer: 0
+  m_Name: EyePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2453041216535140667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894689565847851646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7863309490324468521}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6350956797569151875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 3562127198864948612, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3588102615267471628, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
@@ -186,12 +217,12 @@ PrefabInstance:
     - target: {fileID: 4800348125451969660, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0062093535
+      value: 0.006209354
       objectReference: {fileID: 0}
     - target: {fileID: 4800348125451969660, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.21951099
+      value: 0.219511
       objectReference: {fileID: 0}
     - target: {fileID: 4867278961315728615, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
@@ -231,12 +262,12 @@ PrefabInstance:
     - target: {fileID: 6654910146224056075, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.016685873
+      value: -0.016685875
       objectReference: {fileID: 0}
     - target: {fileID: 6654910146224056075, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.11046543
+      value: -0.11046544
       objectReference: {fileID: 0}
     - target: {fileID: 6706610435101746540, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
@@ -295,7 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2453041216535140667}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6844886203980454918, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
@@ -304,7 +339,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6844886203980454918, guid: b4ab21bc58017c64db005cca141ff6f1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3979451917488761513}
+      addedObject: {fileID: 282033778939249730}
   m_SourcePrefab: {fileID: 100100000, guid: b4ab21bc58017c64db005cca141ff6f1, type: 3}
 --- !u!1 &495055326812057477 stripped
 GameObject:
@@ -324,10 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d979273fdc03f08498f575e67572db5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateNameLandingBeforeGlide: LandingBeforeGlide
-  _stateNameJumpToGoalGate: JumpToGoalGate
-  _stateNameGlide: Glide
---- !u!114 &3979451917488761513
+  _eyePoint: {fileID: 2453041216535140667}
+--- !u!114 &282033778939249730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,16 +630,16 @@ MonoBehaviour:
     swivelRotation: 1.062851
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
-  - enable: 1
+  - enable: 0
     _fixed: 0
     autoRotation: 0
     spaceType: 0
     parent: {fileID: 0}
-    position: {x: -3.3690336, y: 1.2006955, z: 0.3961392}
-    rotation: {x: 0.5010186, y: -0.0058464156, z: -0.17230047, w: -0.84809124}
+    position: {x: -3.0546803, y: 1.8019602, z: 0.04045856}
+    rotation: {x: 0.64082485, y: -0.011167484, z: 0.40156686, w: -0.6541887}
     headWeight: 1
     eyesWeight: 0
-    swivelRotation: 99.26987
+    swivelRotation: 58.58098
     swivelPosition: {x: 0, y: 0, z: 0}
     parentPath: 
   - enable: 0
@@ -654,6 +687,12 @@ MonoBehaviour:
 --- !u!137 &6146629347235187685 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 967736661503375462, guid: b4ab21bc58017c64db005cca141ff6f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6350956797569151875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7863309490324468521 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3819958340382441642, guid: b4ab21bc58017c64db005cca141ff6f1,
     type: 3}
   m_PrefabInstance: {fileID: 6350956797569151875}
   m_PrefabAsset: {fileID: 0}

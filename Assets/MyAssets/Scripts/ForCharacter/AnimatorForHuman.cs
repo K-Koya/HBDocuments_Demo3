@@ -5,27 +5,6 @@ using UnityEngine;
 [DefaultExecutionOrder(2)]
 public class AnimatorForHuman : MonoBehaviour
 {
-    [SerializeField, Tooltip("パラメータ名:Speed")]
-    string _paramNameSpeed = "Speed";
-
-    [SerializeField, Tooltip("パラメータ名:IsJump")]
-    string _paramNameIsJump = "IsJump";
-
-    [SerializeField, Tooltip("パラメータ名:IsGround")]
-    string _paramNameIsGround = "IsGround";
-
-    [SerializeField, Tooltip("パラメータ名:IsBrake")]
-    string _paramNameIsBrake = "IsBrake";
-
-    [SerializeField, Tooltip("パラメータ名:DoSwitchGravity")]
-    string _paramNameDoSwitchGravity = "DoSwitchGravity";
-
-    [SerializeField, Tooltip("パラメータ名:DoSideFlip")]
-    string _paramNameDoSideFlip = "DoSideFlip";
-
-    [SerializeField, Tooltip("パラメータ名:DoRunOver")]
-    string _paramNameDoRunOver = "DoRunOver";
-
     /// <summary>該当キャラクターのアニメーター</summary>
     Animator _anim = null;
 
@@ -42,25 +21,42 @@ public class AnimatorForHuman : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
-        _anim.SetFloat(_paramNameSpeed, _param.ResultSpeed);
-        _anim.SetBool(_paramNameIsGround, _param.IsGround);
-        _anim.SetBool(_paramNameIsJump, _param.IsJump);
-        _anim.SetBool(_paramNameIsBrake, _param.IsBrake);
-
-        if (_param.DoSwitchGravity)
+    {
+        if (PauseManager.Instance.IsPause)
         {
-            _anim.SetTrigger(_paramNameDoSwitchGravity);
+            return;
         }
 
+        if (_param.DoAccelGateGlide)
+        {
+            _anim.Play(AnimParamManager.Instance.StateNameJumpToGoalGate);
+        }
+        else if (_param.FinishAccelGateGlide)
+        {
+            _anim.Play(AnimParamManager.Instance.StateNameLandingBeforeGlide);
+        }
+
+        _anim.SetFloat(AnimParamManager.Instance.ParamNameSpeed, _param.ResultSpeed);
+        _anim.SetBool(AnimParamManager.Instance.ParamNameIsGround, _param.IsGround);
+        _anim.SetBool(AnimParamManager.Instance.ParamNameIsJump, _param.IsJump);
+        _anim.SetBool(AnimParamManager.Instance.ParamNameIsBrake, _param.IsBrake);
+          
         if (_param.DoSideFlip)
         {
-            _anim.SetTrigger(_paramNameDoSideFlip);
+            _anim.SetTrigger(AnimParamManager.Instance.ParamNameDoSideFlip);
         }
 
         if (_param.DoRunOver)
         {
-            _anim.SetTrigger(_paramNameDoRunOver);
+            _anim.SetTrigger(AnimParamManager.Instance.ParamNameDoRunOver);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (_param.DoSwitchGravity)
+        {
+            _anim.SetTrigger(AnimParamManager.Instance.ParamNameDoSwitchGravity);
         }
     }
 }

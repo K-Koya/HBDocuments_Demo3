@@ -120,11 +120,11 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
         {
             SwitchGravity();
 
-            ctrlDistance();
-            setCameraTarget();
-            cameraSwing();
-            leadCameraDistination();
-            avoidObject();
+            CtrlDistance();
+            SetCameraTarget();
+            CameraSwing();
+            LeadCameraDistination();
+            AvoidObject();
         }
     }
 
@@ -141,7 +141,7 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
     }
 
     /// <summary>カメラスイング</summary>
-    void cameraSwing()
+    void CameraSwing()
     {
         //マウス入力情報取得
         Vector2 axis = InputUtility.GetCameraMoveDirection;
@@ -163,13 +163,13 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
         _verticalAngle = Mathf.Clamp(_verticalAngle + (-_deltaVAngle * Time.deltaTime), _CAMERA_VERTICAL_ANGLE_LIMIT_LOWER, _CAMERA_VERTICAL_ANGLE_LIMIT_UPPER);
 
         //カメラ回転量を角度より算出し合算
-        Vector3 relativePos = Quaternion.Euler(_verticalAngle, _roundAngle, 0) * (Vector3.back * _cameraZoomDistance);
+        Vector3 relativePos = Quaternion.Euler(_verticalAngle, _roundAngle, 0f) * (_cameraZoomDistance * Vector3.back);
         relativePos = transform.rotation * relativePos;
         _cameraDestination = relativePos + transform.position;
     }
 
     /// <summary>カメラ距離 distance の設定</summary>
-    void ctrlDistance()
+    void CtrlDistance()
     {
         float deltaDistance = InputUtility.GetCameraZoomValue;
 
@@ -210,7 +210,7 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
     }
 
     /// <summary>カメラの注視対象を設定</summary>
-    void setCameraTarget()
+    void SetCameraTarget()
     {
         //カメラ焦点となる位置に近づいていなければ、近づける処理をする
         transform.position = _cameraTarget.transform.position;
@@ -221,14 +221,14 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
     }
 
     /// <summary>メインカメラを目的地へ</summary>
-    void leadCameraDistination()
+    void LeadCameraDistination()
     {
         _mainCamera.transform.position = _cameraDestination;
         _mainCamera.transform.LookAt(transform, transform.up);
     }
 
     /// <summary>カメラ位置を、障害物を避けるように補正</summary>
-    void avoidObject()
+    void AvoidObject()
     {
         RaycastHit rayhitGround;
         if (Physics.Linecast(_cameraTarget.transform.position, _mainCamera.transform.position, out rayhitGround, LayerManager.Instance.Ground))
@@ -249,7 +249,7 @@ public class ManualCamera : MonoBehaviour, ICameraForTutorial
         if (dot > -0.99f)
         {
             //transform.up = Vector3.Lerp(transform.up, -_param.GravityDirection, 3f * Time.deltaTime);
-            transform.up = Vector3.RotateTowards(transform.up, -_param.GravityDirection, 5f * Time.deltaTime ,10f);
+            transform.up = Vector3.RotateTowards(transform.up, -_param.GravityDirection, 3f * Time.deltaTime, 0.1f);
         }
         else
         {

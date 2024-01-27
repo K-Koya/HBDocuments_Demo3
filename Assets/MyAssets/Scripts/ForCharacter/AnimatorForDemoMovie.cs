@@ -5,18 +5,16 @@ using UnityEngine;
 
 public class AnimatorForDemoMovie : MonoBehaviour
 {
-    [SerializeField, Tooltip("ステート名 : LandingBeforeGlide")]
-    string _stateNameLandingBeforeGlide = "LandingBeforeGlide";
+    [SerializeField, Tooltip("カメラの注視対象 : キャラクター視点")]
+    Transform _eyePoint = null;
 
-    [SerializeField, Tooltip("ステート名 : JumpToGoalGate")]
-    string _stateNameJumpToGoalGate = "JumpToGoalGate";
-
-    [SerializeField, Tooltip("ステート名 : Glide")]
-    string _stateNameGlide = "Glide";
-        
 
     /// <summary>該当キャラクターのアニメーター</summary>
     Animator _anim = null;
+
+    /// <summary>カメラの注視対象 : キャラクター視点</summary>
+    public Transform EyePoint { get => _eyePoint; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,16 +30,21 @@ public class AnimatorForDemoMovie : MonoBehaviour
 
     public void SwitchToJumpToGoalGate()
     {
-        _anim.Play(_stateNameJumpToGoalGate);
+        _anim.Play(AnimParamManager.Instance.StateNameJumpToGoalGate);
     }
 
     public void SwitchToGlide()
     {
-        _anim.Play(_stateNameGlide);
+        _anim.Play(AnimParamManager.Instance.StateNameGlide);
     }
 
     public void SwitchToLandingBeforeGlide()
     {
-        _anim.Play(_stateNameLandingBeforeGlide);
+        _anim.Play(AnimParamManager.Instance.StateNameLandingBeforeGlide);
+    }
+
+    public void SwitchToRecoverBeforeMiss()
+    {
+
     }
 }

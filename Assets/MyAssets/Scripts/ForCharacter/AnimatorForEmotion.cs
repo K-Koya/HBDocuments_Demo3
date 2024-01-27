@@ -10,9 +10,6 @@ public class AnimatorForEmotion : MonoBehaviour
     /// <summary>該当アニメーター</summary>
     Animator _anim = null;
 
-    [SerializeField, Tooltip("パラメータ名:DoBlink")]
-    string _paramNameDoBlink = "DoBlink";
-
     /// <summary>瞬き時間</summary>
     float _blinkTimer = 0f;
 
@@ -34,7 +31,7 @@ public class AnimatorForEmotion : MonoBehaviour
         _blinkTimer -= Time.deltaTime;
         if (_blinkTimer < 0f)
         {
-            _anim.SetTrigger(_paramNameDoBlink);
+            _anim.SetTrigger(AnimParamManager.Instance.ParamNameDoBlink);
             _blinkTimer = Random.Range(0.5f, _BASE_BLINK_TIME);
         }
     }

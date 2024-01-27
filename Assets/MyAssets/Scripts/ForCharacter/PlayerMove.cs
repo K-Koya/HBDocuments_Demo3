@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     const float _DASH_JUMP_RATIO = 1.5f;
 
     /// <summary>サイドフリップ時のジャンプ力補正値</summary>
-    const float _SIDE_FLIP_RATIO = 2f;
+    const float _SIDE_FLIP_RATIO = 1.7f;
 
     /// <summary>ブレーキ状態を保つ時間</summary>
     const float _BRAKE_TIME = 0.5f;
@@ -121,6 +121,7 @@ public class PlayerMove : MonoBehaviour
         if (_param.IsGround)
         {
             _MoveControl = GroundMove;
+
         }
         else
         {
@@ -150,8 +151,8 @@ public class PlayerMove : MonoBehaviour
     {
         bool isVelocityOnPlaneZero = false;
 
-        _param.DoSideFlip = false;
-        _param.DoRunOver = false;
+        _param.IsSideFlip = false;
+        _param.IsRunOver = false;
 
         //向き指定
         Vector3 velocityOnPlane = Vector3.ProjectOnPlane(_rb.velocity, -_param.GravityDirection);
@@ -196,10 +197,10 @@ public class PlayerMove : MonoBehaviour
                     if (InputUtility.GetDownJump)
                     {
                         _brakeDirection = Vector3.zero;
-                        _param.DoSideFlip = true;
+                        _param.IsSideFlip = true;
 
                         transform.rotation = Quaternion.LookRotation(_moveForce, -_param.GravityDirection);
-                        _rb.AddForce(_moveForce + (_jumpNormalRate * _SIDE_FLIP_RATIO * -_param.GravityDirection), ForceMode.VelocityChange);
+                        _rb.AddForce(_jumpNormalRate * _SIDE_FLIP_RATIO * -_param.GravityDirection, ForceMode.VelocityChange);
                     }
 
                     return;
@@ -224,7 +225,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     transform.position = step.Value;
                     _rb.velocity = velocityOnPlane;
-                    _param.DoRunOver = true;
+                    _param.IsRunOver = true;
                 }
                 else
                 {
@@ -277,8 +278,8 @@ public class PlayerMove : MonoBehaviour
     {
         _rb.drag = _dragForAir;
 
-        _param.DoSideFlip = false;
-        _param.DoRunOver = false;
+        _param.IsSideFlip = false;
+        _param.IsRunOver = false;
 
         _brakeTimer = 0f;
         _param.IsBrake = false;
@@ -288,7 +289,7 @@ public class PlayerMove : MonoBehaviour
         if (_moveForce.sqrMagnitude > 0.01f)
         {
             velocityOnPlane = Vector3.Normalize(velocityOnPlane);
-            CharacterRotation(velocityOnPlane, -_param.GravityDirection, 90f, false);
+            //CharacterRotation(velocityOnPlane, -_param.GravityDirection, 90f, false);
         }
 
         if (InputUtility.GetMove)
@@ -308,7 +309,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     transform.position = step.Value;
                     _rb.velocity = velocityOnPlane;
-                    _param.DoRunOver = true;
+                    _param.IsRunOver = true;
                 }
                 else
                 {
@@ -349,7 +350,7 @@ public class PlayerMove : MonoBehaviour
                 if (step.HasValue)
                 {
                     transform.position = step.Value;
-                    _param.DoRunOver = true;
+                    _param.IsRunOver = true;
                 }
             }
             //壁がない場合は壁張り付き解除

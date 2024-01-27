@@ -44,12 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42792f71c67e03c4ea6a3fab72c68631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDontDestroyOnLoad: 0
+  _isDontDestroyOnLoad: 1
+  _forFootPointShadow: {fileID: 2370427662966826203, guid: ba1b853ccc421d34c915e6a62c9e9ac6,
+    type: 3}
   _prefabs:
   - name: Junichi
-    forPlaying: {fileID: 0}
-    forUseRigidBody: {fileID: 0}
-    forNotUseRigidBody: {fileID: 0}
+    forPlaying: {fileID: 4325269396051725609, guid: 3ed0bc141a571a8439d43d2dcd67e79c,
+      type: 3}
+    forUseRigidBody: {fileID: 557627902535348598, guid: 96fa362394076a84991bbe4f65224f8c,
+      type: 3}
+    forNotUseRigidBody: {fileID: 7300657459371692748, guid: 640770a72316897409dccc7af99161f9,
+      type: 3}
   - name: Emiri
     forPlaying: {fileID: 5445589718184833296, guid: 4b82d86b8f53bb342a9f7862282c436b,
       type: 3}

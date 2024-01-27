@@ -39,7 +39,7 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InputUtility.GetDownPause || InputUtility.GetDownDecide)
+        if(InputUtility.GetDownPause)
         {
             OnCloseTitle();
         }
@@ -52,6 +52,7 @@ public class TitleManager : MonoBehaviour
         _titleUI.SetActive(false);
         Cursor.visible = false;
         enabled = false;
+        _onCloseTitle.Invoke();
         StageManagerBase.Current.State = StateOnStage.IntroduceDemo;
     }
 }

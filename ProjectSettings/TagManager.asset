@@ -12,6 +12,10 @@ TagManager:
   - EyePoint
   - GoalDolly
   - InertiaGround
+  - DefaultGround
+  - MetallicGround
+  - GrassAndLeafGround
+  - WoodGround
   layers:
   - Default
   - TransparentFX

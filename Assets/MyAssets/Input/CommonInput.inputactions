@@ -511,6 +511,28 @@
                 },
                 {
                     "name": "",
+                    "id": "03d03a30-170e-4f81-b346-d25485118196",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Decide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c07472e-e112-4d56-8ea5-99f5b7541a75",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Decide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "25561735-aa0a-4253-a613-411787738f29",
                     "path": "<Mouse>/scroll",
                     "interactions": "",

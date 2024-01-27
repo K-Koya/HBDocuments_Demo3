@@ -6,20 +6,21 @@ public class StageManagerBase : MonoBehaviour
     /// <summary>バーチャルカメラの標準Priority</summary>
     const byte _BASE_CAMERA_PRIORITY = 20;
 
+
     /// <summary>現在のステージのマネージャー</summary>
     static protected StageManagerBase _Current = null;
 
     /// <summary>現在の操作キャラクター</summary>
-    static protected CharacterKind _CurrentCharacter = CharacterKind.Emiri;
+    static protected CharacterKind _CurrentCharacter = CharacterKind.Junichi;
 
     /// <summary>デモムービー表示用キャラクター</summary>
-    static protected GameObject _CharacterForDemo = null;
+    protected GameObject _characterForDemo = null;
 
     /// <summary>コースアウト時表示用キャラクター</summary>
-    static protected GameObject _CharacterForCourseOut = null;
+    protected GameObject _characterForCourseOut = null;
 
     /// <summary>操作キャラクター</summary>
-    static protected GameObject _CharacterForControl = null;
+    protected GameObject _characterForControl = null;
 
 
     /// <summary>デモムービー表示用キャラクターのアニメーション制御</summary>
@@ -55,6 +56,15 @@ public class StageManagerBase : MonoBehaviour
 
     [SerializeField, Tooltip("コースアウト後、いつメニューに移行するかを指定")]
     protected float _missMenuSwitchTime = 3f;
+
+    /*
+    [Header("コースアウト後の復帰デモ用部品")]
+    [SerializeField, Tooltip("コースアウト復帰後、最初の正面方向と同じ向きのオブジェクトを指定")]
+    protected Transform _revivalFrontReference = null;
+
+    [SerializeField, Tooltip("コースアウト復帰デモのカメラ")]
+    protected CinemachineVirtualCamera _revivalCamera = null;
+    */
 
 
     [Header("ステージクリア時のデモ用部品")]
@@ -104,9 +114,6 @@ public class StageManagerBase : MonoBehaviour
     /// <summary>現在のステージのマネージャー</summary>
     static public StageManagerBase Current => _Current;
 
-    /// <summary>デモムービー表示用キャラクター</summary>
-    static public GameObject CharacterForDemo { get => _CharacterForDemo; set => _CharacterForDemo = value; }
-
 
 
     void Awake()
@@ -116,25 +123,32 @@ public class StageManagerBase : MonoBehaviour
 
     void Start()
     {
+        //TODO
+        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            _CurrentCharacter = (CharacterKind)Random.Range(0, 2);
+        }
+
         //キャラクター配置
         var prefabs = CharacterPrefabManager.Instance.Get(_CurrentCharacter);
-        if (!_CharacterForControl) _CharacterForControl = Instantiate(prefabs.forPlaying);
-        if (!_CharacterForCourseOut) _CharacterForCourseOut = Instantiate(prefabs.forUseRigidBody);
-        if (!_CharacterForDemo) _CharacterForDemo = Instantiate(prefabs.forNotUseRigidBody);
-        _CharacterForControl.transform.position = _introDollyCart.m_Path.transform.position;
-        _CharacterForControl.transform.forward = _characterFrontReference.transform.forward;
+        if (!_characterForControl) _characterForControl = Instantiate(prefabs.forPlaying);
+        if (!_characterForCourseOut) _characterForCourseOut = Instantiate(prefabs.forUseRigidBody);
+        if (!_characterForDemo) _characterForDemo = Instantiate(prefabs.forNotUseRigidBody);
+        _characterForControl.transform.position = _introDollyCart.m_Path.transform.position;
+        _characterForControl.transform.forward = _characterFrontReference.transform.forward;
 
-        _characterForDemoAnim = _CharacterForDemo.GetComponentInChildren<AnimatorForDemoMovie>();
+        _characterForDemoAnim = _characterForDemo.GetComponentInChildren<AnimatorForDemoMovie>();
 
         //キャラクター非活性化
-        _CharacterForControl.SetActive(false);
-        _CharacterForCourseOut.SetActive(false);
-        _CharacterForDemo.SetActive(false);
+        _characterForControl.SetActive(false);
+        _characterForCourseOut.SetActive(false);
+        _characterForDemo.SetActive(false);
 
         //カメラ非活性化
         _introCamera.gameObject.SetActive(false);
         _mainCamera.gameObject.SetActive(false);
         _missCamera.gameObject.SetActive(false);
+        //_revivalCamera.gameObject.SetActive(false);
         _clearAnimationCamera.gameObject.SetActive(false);
 
         //ドーリーカート非活性化
@@ -146,6 +160,7 @@ public class StageManagerBase : MonoBehaviour
         _introCamera.Priority = _BASE_CAMERA_PRIORITY;
         _mainCamera.Priority = _BASE_CAMERA_PRIORITY + 1;
         _missCamera.Priority = _BASE_CAMERA_PRIORITY;
+        //_revivalCamera.Priority = _BASE_CAMERA_PRIORITY;
     }
 
     void OnDestroy()
@@ -162,9 +177,9 @@ public class StageManagerBase : MonoBehaviour
 
                 if (_doInit)
                 {
-                    _CharacterForCourseOut.SetActive(false);
-                    _CharacterForDemo.SetActive(true);
-                    _CharacterForControl.SetActive(false);
+                    _characterForCourseOut.SetActive(false);
+                    _characterForDemo.SetActive(true);
+                    _characterForControl.SetActive(false);
 
                     _mainCamera.gameObject.SetActive(false);
                     _introCamera.Priority = _mainCamera.Priority + 1;
@@ -172,11 +187,11 @@ public class StageManagerBase : MonoBehaviour
                     _introDollyCart.gameObject.SetActive(true);
                     _introCameraDollyCart.gameObject.SetActive(true);
                     _introDollyCart.m_Position = 0f;
-                    _CharacterForDemo.transform.parent = _introDollyCart.transform;
-                    _CharacterForDemo.transform.localPosition = Vector3.zero;
-                    _CharacterForDemo.transform.localRotation = Quaternion.identity;
+                    _characterForDemo.transform.parent = _introDollyCart.transform;
+                    _characterForDemo.transform.localPosition = Vector3.zero;
+                    _characterForDemo.transform.localRotation = Quaternion.identity;
 
-                    _demoCameraTarget = _CharacterForDemo.transform;
+                    _demoCameraTarget = _characterForDemoAnim.EyePoint;
                     _demoCameraUp = _introDollyCart.transform.parent.up;
 
                     _doInit = false;
@@ -197,9 +212,9 @@ public class StageManagerBase : MonoBehaviour
 
                 if (_doInit)
                 {
-                    _CharacterForCourseOut.SetActive(false);
-                    _CharacterForDemo.SetActive(false);
-                    _CharacterForControl.SetActive(true);
+                    _characterForCourseOut.SetActive(false);
+                    _characterForDemo.SetActive(false);
+                    _characterForControl.SetActive(true);
 
                     _mainCamera.gameObject.SetActive(true);
                     _mainCamera.Priority = _introCamera.Priority + 1;
@@ -229,18 +244,18 @@ public class StageManagerBase : MonoBehaviour
 
                 if (_doInit)
                 {
-                    _CharacterForCourseOut.SetActive(false);
-                    _CharacterForDemo.SetActive(true);
-                    _CharacterForControl.SetActive(false);
+                    _characterForCourseOut.SetActive(false);
+                    _characterForDemo.SetActive(true);
+                    _characterForControl.SetActive(false);
 
                     _clearCamera.gameObject.SetActive(true);
                     _clearCamera.Priority = _mainCamera.Priority + 1;
                     _clearDollyCart.gameObject.SetActive(true);
-                    _CharacterForDemo.transform.parent = _clearDollyCart.transform;
-                    _CharacterForDemo.transform.localPosition = Vector3.zero;
-                    _CharacterForDemo.transform.localRotation = Quaternion.identity;
+                    _characterForDemo.transform.parent = _clearDollyCart.transform;
+                    _characterForDemo.transform.localPosition = Vector3.zero;
+                    _characterForDemo.transform.localRotation = Quaternion.identity;
                     _mainCamera.gameObject.SetActive(false);
-                    _demoCameraTarget = _CharacterForDemo.transform;
+                    _demoCameraTarget = _characterForDemo.transform;
                     _demoCameraUp = _mainCamera.transform.parent.up;
 
                     _characterForDemoAnim.SwitchToJumpToGoalGate();
@@ -256,42 +271,47 @@ public class StageManagerBase : MonoBehaviour
 
                 if (_doInit)
                 {
-                    _CharacterForCourseOut.SetActive(true);
-                    _CharacterForDemo.SetActive(false);
+                    _characterForCourseOut.SetActive(true);
+                    _characterForDemo.SetActive(false);
 
                     //速度と向きを維持
-                    _CharacterForCourseOut.transform.position = _CharacterForControl.transform.position;
-                    _CharacterForCourseOut.transform.rotation = _CharacterForControl.transform.rotation;
-                    Rigidbody rbCourseOut = _CharacterForCourseOut.GetComponent<Rigidbody>();
-                    Rigidbody rbControl = _CharacterForControl.GetComponent<Rigidbody>();
+                    _characterForCourseOut.transform.position = _characterForControl.transform.position;
+                    _characterForCourseOut.transform.rotation = _characterForControl.transform.rotation;
+                    Rigidbody rbCourseOut = _characterForCourseOut.GetComponent<Rigidbody>();
+                    Rigidbody rbControl = _characterForControl.GetComponent<Rigidbody>();
                     rbCourseOut.velocity = rbControl.velocity * 0.8f;
-                    rbCourseOut.AddTorque(_CharacterForControl.transform.right * 2f, ForceMode.VelocityChange);
+                    rbCourseOut.AddTorque(_characterForControl.transform.right * 2f, ForceMode.VelocityChange);
 
-                    _CharacterForControl.SetActive(false);
+                    _characterForControl.SetActive(false);
 
                     _missCamera.transform.position = _mainCamera.transform.position;
                     _missCamera.gameObject.SetActive(true);
                     _missCamera.Priority = _mainCamera.Priority + 1;
                     _mainCamera.gameObject.SetActive(false);
-                    _demoCameraTarget = _CharacterForCourseOut.transform;
+                    _demoCameraTarget = _characterForCourseOut.transform;
                     _demoCameraUp = _mainCamera.transform.parent.up;
 
-                    _timer = _missMenuSwitchTime;
+                    SceneChangeManager.Instance.BlackoutWithCycleAndChangeTo();
 
                     _doInit = false;
                 }
 
                 _missCamera.transform.LookAt(_demoCameraTarget.position, _demoCameraUp);
 
-                //指定時間後にシーンを再ロード
-                if (_timer < 0f)
+                break;
+
+            case StateOnStage.MissedIntroduce:
+
+                if (_doInit)
                 {
-                    _timer = 0f;
-                    SceneChangeManager.Instance.LoadSelf();
-                }
-                else
-                {
-                    _timer -= Time.deltaTime;
+                    /*
+                    _CharacterForCourseOut.SetActive(true);
+                    _CharacterForDemo.SetActive(false);
+                    _CharacterForControl.SetActive(false);
+                    */
+
+                    _state = StateOnStage.Playing;
+                    _doInit = false;
                 }
 
                 break;
@@ -304,6 +324,8 @@ public class StageManagerBase : MonoBehaviour
     /// <summary>導入デモからステージ挑戦中に変更</summary>
     public void IntroduceToPlaying()
     {
+        _characterForDemo.transform.parent = null;
+        _characterForDemo.transform.position = _characterForControl.transform.position;
         State = StateOnStage.Playing;
     }
 
@@ -332,8 +354,6 @@ public class StageManagerBase : MonoBehaviour
     public void IntroLanding()
     {
         _characterForDemoAnim.SwitchToLandingBeforeGlide();
-        _CharacterForDemo.transform.parent = null;
-        _CharacterForDemo.transform.position = _CharacterForControl.transform.position;
     }
 
     /// <summary>ステージクリアデモ途中のカメラ変更</summary>
@@ -347,7 +367,7 @@ public class StageManagerBase : MonoBehaviour
     /// <summary>登録されたシーンに飛ぶ</summary>
     public void SceneChange()
     {
-        SceneChangeManager.Instance.ChangeTo(_nextSceneName);
+        SceneChangeManager.Instance.WhiteoutWithFogAndChangeTo(_nextSceneName);
     }
 }
 
@@ -366,6 +386,8 @@ public enum StateOnStage : byte
     MissDemo = 10,
     /// <summary>ミス時メニュー</summary>
     MissMenu = 11,
+    /// <summary>ミス後導入デモ</summary>
+    MissedIntroduce = 12,
 
     /// <summary>タイトル</summary>
     Title = 30,

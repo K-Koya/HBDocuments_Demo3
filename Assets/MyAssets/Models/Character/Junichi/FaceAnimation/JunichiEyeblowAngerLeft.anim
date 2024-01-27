@@ -43,7 +43,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowAngerL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -73,7 +73,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowSadL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -103,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowTroubledL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -116,7 +116,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 1954367186
       script: {fileID: 0}
       typeID: 137
@@ -125,7 +125,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 1695492911
       script: {fileID: 0}
       typeID: 137
@@ -134,7 +134,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 2770785369
       attribute: 4103348467
       script: {fileID: 0}
       typeID: 137
@@ -190,7 +190,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowAngerL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -220,7 +220,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowSadL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0
@@ -250,7 +250,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: blendShape.EyebrowTroubledL
-    path: 
+    path: Face
     classID: 137
     script: {fileID: 0}
     flags: 0

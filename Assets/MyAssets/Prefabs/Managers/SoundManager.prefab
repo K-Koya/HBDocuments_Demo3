@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &898224977834163882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3605751534337239681}
+  - component: {fileID: 3290199138059259102}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3605751534337239681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898224977834163882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.878889, y: -19.596388, z: 19.892359}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3290199138059259102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898224977834163882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32638a702d875984dbafa4b7e846eb58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDontDestroyOnLoad: 0
+  _pairingSounds:
+  - type: 0
+    walkSounds:
+    - {fileID: 8300000, guid: 7ca5a9710db4327439c9f8cb8204615e, type: 3}
+    - {fileID: 8300000, guid: 14ae706fef2303e4cb71112dbd5d250b, type: 3}
+    - {fileID: 8300000, guid: b995bc1775ea83b4b8f861763e9a1424, type: 3}
+    runSounds:
+    - {fileID: 8300000, guid: ffa5441258224694690169f4bd95b969, type: 3}
+    - {fileID: 8300000, guid: 5a5fe2a543e35ef44980fcf5ac79551a, type: 3}
+    - {fileID: 8300000, guid: f8e559768bed7ed4680ab0449da7ec3a, type: 3}
+    jumpSounds:
+    - {fileID: 8300000, guid: f42760acdd77d6c459020ab0f9db4f30, type: 3}
+    - {fileID: 8300000, guid: db2281b9de1863f409d62f9edf69c6cf, type: 3}
+    - {fileID: 8300000, guid: a465f4e2a2f3a354f927f77994a68a08, type: 3}
+    landingSounds:
+    - {fileID: 8300000, guid: 304f2bf2228cba94e91cd22803e54bcf, type: 3}
+    - {fileID: 8300000, guid: c86476186f357d44eb470d68a2986520, type: 3}
+    - {fileID: 8300000, guid: f65b8caedf0c89b4c9f6ea1408f5e362, type: 3}
+  - type: 1
+    walkSounds:
+    - {fileID: 8300000, guid: 83c58d64f2e240c41b1f2c2885b253a6, type: 3}
+    - {fileID: 8300000, guid: 3610d597db7918e44906d575bd074616, type: 3}
+    - {fileID: 8300000, guid: 149e8ca9df68d744e9722158daa78ab1, type: 3}
+    runSounds:
+    - {fileID: 8300000, guid: 9a47b64b8d432b94eb7317d268127b1d, type: 3}
+    - {fileID: 8300000, guid: e2b868994c062864eaa867681aeac0d8, type: 3}
+    - {fileID: 8300000, guid: 034986a81cc0be546a288ff268b8783e, type: 3}
+    jumpSounds:
+    - {fileID: 8300000, guid: df49938a1860650418b6d5654ed436be, type: 3}
+    - {fileID: 8300000, guid: d22035de002018b44bc76a915efcba10, type: 3}
+    - {fileID: 8300000, guid: 5c39ec0074165fb4eaf789fc68f5379b, type: 3}
+    landingSounds:
+    - {fileID: 8300000, guid: 5e94f3d51023c5446b59f52c71e0cade, type: 3}
+    - {fileID: 8300000, guid: 0462feb393ce2b64b9f78c8bc9303014, type: 3}
+    - {fileID: 8300000, guid: d4ce8205a3ae9ab4181dbc190b1a837e, type: 3}
+  - type: 2
+    walkSounds:
+    - {fileID: 8300000, guid: 88836c252240bf148b51f31eaa40423b, type: 3}
+    - {fileID: 8300000, guid: 7b0242fe2eb831e4cbf3bada890a9dcd, type: 3}
+    - {fileID: 8300000, guid: 5110f81119d96ea47b2e9a45875c1156, type: 3}
+    runSounds:
+    - {fileID: 8300000, guid: 81ca12f276403d4429d50fcf4cf8629a, type: 3}
+    - {fileID: 8300000, guid: 80e0ad20812b5da4da809eb1976d38c6, type: 3}
+    - {fileID: 8300000, guid: 55a5a001ad9ac3b429adbbe18412b1f9, type: 3}
+    jumpSounds:
+    - {fileID: 8300000, guid: 89024d65ecc31884b8ff35b97efa8dcc, type: 3}
+    - {fileID: 8300000, guid: 156f78901fdf86e49ac90dd0c4a31ac5, type: 3}
+    landingSounds:
+    - {fileID: 8300000, guid: 99c4a3774a894ff41a9f16f21aad34aa, type: 3}
+    - {fileID: 8300000, guid: 4d92b7b017bd31947a2785ee1aca7812, type: 3}
+  - type: 3
+    walkSounds:
+    - {fileID: 8300000, guid: 3af6e561e364a274aa306461461c386b, type: 3}
+    - {fileID: 8300000, guid: 30668cf6c5cbfef478b0812fc59eb646, type: 3}
+    - {fileID: 8300000, guid: a45bdfd5056ed1d4d8f667cc2498ca12, type: 3}
+    runSounds:
+    - {fileID: 8300000, guid: cee4ef3ef0fd155409f7b5a5162cece8, type: 3}
+    - {fileID: 8300000, guid: b30822d7e7d412d459397d0749be742a, type: 3}
+    - {fileID: 8300000, guid: 7f31ac62883f78b4ba610e164f57f879, type: 3}
+    jumpSounds:
+    - {fileID: 8300000, guid: 7d22997c3222c124d91d351ddc1c6ee4, type: 3}
+    - {fileID: 8300000, guid: fcbaf164018fc614a9729400cf40f9de, type: 3}
+    landingSounds:
+    - {fileID: 8300000, guid: bb5ec83ccc5c69f43b31f100278bff91, type: 3}
+    - {fileID: 8300000, guid: 623ad07c146cedd4db6b902fd1612618, type: 3}

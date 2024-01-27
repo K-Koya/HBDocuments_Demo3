@@ -52,7 +52,6 @@ public class TutorialThroughOver : MonoBehaviour
             yield return null;
             if (_character.DoRunOver)
             {
-                _character.DoRunOver = true;
                 _isCleared = true;
             }
         }
